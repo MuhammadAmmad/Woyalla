@@ -16,4 +16,6 @@
 
     <string name="err_msg_name">Enter your full name here</string>
     <string name="err_msg_phone">Enter a valid phone number</string>
+    <string name="err_msg_comment">Enter comment properly</string>
+
 </resources>

@@ -12,14 +12,28 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.brainup.woyalla.Database.Database;
 import com.brainup.woyalla.Model.User;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.IOException;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 
 public class Login extends AppCompatActivity {
@@ -38,6 +52,11 @@ public class Login extends AppCompatActivity {
     private User Main_User;
     private ProgressDialog myDialog;
 
+    OkHttpClient client;    //this object will handle http requests
+    MediaType mediaType;
+    RequestBody body;
+    Request request;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -55,7 +74,7 @@ public class Login extends AppCompatActivity {
         * */
 
 		myContext = this;
-		ed_phoneNumber = (EditText) findViewById(R.id.login_phone);
+        ed_phoneNumber = (EditText) findViewById(R.id.login_phone);
         ed_name = (EditText) findViewById(R.id.login_name);
 		bt_login = (Button) findViewById(R.id.btnLogin);
 
@@ -65,7 +84,15 @@ public class Login extends AppCompatActivity {
 		ed_phoneNumber.addTextChangedListener(new MyTextWatcher(ed_phoneNumber));
         ed_name.addTextChangedListener(new MyTextWatcher(ed_name));
         Main_User = new User();
-	}
+
+        /*
+        * Initialize the http request objects
+        * */
+        client = new OkHttpClient();   //initialize the okHttpClient to send http requests
+        mediaType = MediaType.parse("application/x-www-form-urlencoded");
+
+
+    }
 
 	public void setButtonActions(){
 
@@ -105,11 +132,11 @@ public class Login extends AppCompatActivity {
 
         myDialog = new ProgressDialog(this);
         myDialog.setTitle(R.string.app_name);
-        myDialog.setMessage("Creating the Account ....");
+        myDialog.setMessage("Logging in ....");
         myDialog.show();
 
 
-        Thread splash = new Thread(){
+        Thread login = new Thread(){
             @Override
             public void run() {
                 try {
@@ -121,7 +148,7 @@ public class Login extends AppCompatActivity {
             }
         };
 
-        splash.start();
+        login.start();
 
     }
 
@@ -129,20 +156,130 @@ public class Login extends AppCompatActivity {
         Main_User.setName(ed_name.getText().toString());
         Main_User.setPhone(ed_phoneNumber.getText().toString());
 
-        ContentValues cv = new ContentValues();
-        cv.put(Database.USER_FIELDS[0], Main_User.getName());
-        cv.put(Database.USER_FIELDS[1], Main_User.getPhone());
 
-        long checkAdd = Woyalla.myDatabase.insert(Database.Table_USER,cv);
-        if(checkAdd!=-1){
-            //Toast.makeText(this,"Account has been created",Toast.LENGTH_SHORT).show();
-            myDialog.dismiss();
-            Intent intent = new Intent(this,MainActivity.class);
-            startActivity(intent);
-            finish();
+        //initialize the body object for the http post request
+        body = RequestBody.create(mediaType,
+                "phoneNumber="+Main_User.getPhone() +
+                        "&name="+Main_User.getName());
+
+        //create the request object from http post
+        request = new Request.Builder()
+                .url(Woyalla.API_URL + "clients/register")
+                .post(body)
+                .addHeader("authorization", "Basic dGhlVXNlcm5hbWU6dGhlUGFzc3dvcmQ=")
+                .addHeader("cache-control", "no-cache")
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .build();
+
+
+        try {
+            //make the http post request and get the server response
+            Response response = client.newCall(request).execute();
+            String responseBody = response.body().string().toString();
+            Log.i("responseFull", responseBody);
+
+            //get the json response object
+            JSONObject myObject = (JSONObject) new JSONTokener(responseBody).nextValue();
+
+            /**
+             * If we get OK response
+             *
+             * */
+            if(myObject.get("status").toString().startsWith("ok") ){
+                /**
+                 * If we get OK response & we get a data object with in the response json
+                 * This is a new user
+                 * */
+                if(myObject.get("data")!=null) {
+                    Log.i("resposeJsonStatus", myObject.get("status").toString());
+                    Log.i("resposeJsonMessage", myObject.get("message").toString());
+
+                    JSONObject json_response = myObject.getJSONObject("data");
+                    Log.i("responseJsonName", json_response.get("name").toString());
+                    Log.i("responseJsonPhoneNumber", json_response.get("phoneNumber").toString());
+
+                    ContentValues cv = new ContentValues();
+                    cv.put(Database.USER_FIELDS[0], Main_User.getName());
+                    cv.put(Database.USER_FIELDS[1], Main_User.getPhone());
+
+
+                    long checkAdd = Woyalla.myDatabase.insert(Database.Table_USER,cv);
+                    if(checkAdd!=-1){
+                        myDialog.dismiss();
+
+                        Login.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(Login.this,"Your Account has been successfully created",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        Intent intent = new Intent(this,MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else{
+                        myDialog.dismiss();
+                        ShowDialog("An error occurred. Please try again.");
+                    }
+                }
+
+                /**
+                 * If we get OK response & we don't get a data object with in the response json
+                 * This is an existing user but the account is updated with new info
+                 * */
+                else if(myObject.get("data")==null){
+
+                    ContentValues cv = new ContentValues();
+                    cv.put(Database.USER_FIELDS[0], Main_User.getName());
+                    cv.put(Database.USER_FIELDS[1], Main_User.getPhone());
+
+                    long checkAdd = Woyalla.myDatabase.insert(Database.Table_USER,cv);
+                    if (checkAdd != -1) {
+                        Log.i("user","An already account is updated");
+                        myDialog.dismiss();
+
+                        Login.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(Login.this,"We found an account with this phone number. \nWe have updated your info with your new data.",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else {
+                        myDialog.dismiss();
+                        Login.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                ShowDialog("An error occurred! Please try again later");
+                            }
+                        });
+                    }
+
+                }
+
+            }
+            /**
+             * If we get error response
+             *
+             * */
+            else if(myObject.get("status").toString().startsWith("error") ){
+                final String errorMessage = myObject.get("description").toString();
+                myDialog.dismiss();
+                Login.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ShowDialog(errorMessage);
+                    }
+                });
+            }
         }
-        else{
-            //Toast.makeText(this,"An error occured! Please try again",Toast.LENGTH_LONG).show();
+        catch (IOException e) {
+            e.printStackTrace();
+            myDialog.dismiss();
+        } catch(JSONException e){
             myDialog.dismiss();
         }
 
