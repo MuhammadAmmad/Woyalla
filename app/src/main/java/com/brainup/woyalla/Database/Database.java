@@ -9,10 +9,13 @@ import android.util.Log;
 
 public class Database {
     public static final String Table_USER = "USER";
+    public static final String Table_NEARBYE_DRIVER = "NEARBYE_DRIVERS";
 
     public static final String[] USER_FIELDS = { "Name","Phone","Latitude","Longitude"};
+    public static final String[] NEARBYE_DRIVERS_FIELDS = { "distanceFromCilent","gpsLatitude","gpsLongitude"};
 
     public static final String[] USER_COLUMN = { "id", "Name","Phone","Latitude","Longitude"};
+    public static final String[] NEARBYE_DRIVERS_COLUMN = { "id","distanceFromCilent","gpsLatitude","gpsLongitude"};
 
 
 	private SQLiteDatabase myDatabase;
@@ -26,6 +29,7 @@ public class Database {
         myDatabase = mySQL.getWritableDatabase();
 
         mySQL.createTables(Table_USER, USER_FIELDS);
+        mySQL.createTables(Table_NEARBYE_DRIVER, NEARBYE_DRIVERS_FIELDS);
 
     }
 
@@ -123,6 +127,9 @@ public class Database {
         String[] strs = null;
         if(DB_Table == Table_USER){
             strs = USER_COLUMN;
+        }
+        else if(DB_Table == Table_NEARBYE_DRIVER){
+            strs = NEARBYE_DRIVERS_COLUMN;
         }
         return strs;
     }

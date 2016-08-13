@@ -156,7 +156,6 @@ public class Login extends AppCompatActivity {
         Main_User.setName(ed_name.getText().toString());
         Main_User.setPhone(ed_phoneNumber.getText().toString());
 
-
         //initialize the body object for the http post request
         body = RequestBody.create(mediaType,
                 "phoneNumber="+Main_User.getPhone() +
@@ -279,8 +278,20 @@ public class Login extends AppCompatActivity {
         catch (IOException e) {
             e.printStackTrace();
             myDialog.dismiss();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    ShowDialog("An error occurred! Please try again");
+                }
+            });
         } catch(JSONException e){
             myDialog.dismiss();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    ShowDialog("An error occurred! Please try again!");
+                }
+            });
         }
 
     }

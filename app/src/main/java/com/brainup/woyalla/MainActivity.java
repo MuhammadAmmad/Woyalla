@@ -1,17 +1,23 @@
 package com.brainup.woyalla;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +32,16 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
 
@@ -33,6 +49,7 @@ public class MainActivity extends AppCompatActivity
     private GoogleMap mMap;             //map object
     SupportMapFragment mapFragment;     //map fragment
     Button call;                        //call button declaration
+    GPSTracker gps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,17 +75,192 @@ public class MainActivity extends AppCompatActivity
         //call button initialization
         call = (Button) findViewById(R.id.call);
 
+        //initialize the gps tracker object
+        gps  = new GPSTracker(this);
+
+        checkGPS();
         handleCallButton();
     }
 
-    public void handleCallButton(){
+    private void checkGPS() {
+        if(!gps.canGetLocation()){
+            gps.showSettingsAlert();
+        }
+        else {
+            moveMapToMyLocation();
+        }
+    }
+
+    public void handleCallButton() {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Calling the server " ,Toast.LENGTH_SHORT).show();
+                //check if the app has call permission
+                if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                   //if it permission not granted, request a dialog box that asks the client to grant the permission
+                    //the response will be handled by onRequestPermissionResult method
+                    ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CALL_PHONE},1);
+                    return;
+                }
+                    startCall();
             }
         });
 
+    }
+
+    public void startCall() {
+        Toast.makeText(MainActivity.this, "Calling the server ", Toast.LENGTH_SHORT).show();
+        String phoneNumber = getResources().getString(R.string.call_center_number);
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + phoneNumber));
+        startActivity(intent);
+
+        sendGPSLocation();
+    }
+
+    private void sendGPSLocation() {
+        gps = new GPSTracker(MainActivity.this);
+        if(gps.canGetLocation()) {
+
+            final double latitude = gps.getLatitude();
+            final double longitude = gps.getLongitude();
+            final String userPhone = Woyalla.myDatabase.get_Value_At_Top(Database.Table_USER,Database.USER_FIELDS[1]);
+
+            ContentValues cv = new ContentValues();
+            cv.put(Database.USER_FIELDS[2],latitude+"");
+            cv.put(Database.USER_FIELDS[3],longitude+"");
+
+            Woyalla.myDatabase.insert(Database.Table_USER,cv);
+            Thread send = new Thread(){
+                @Override
+                public void run() {
+                    try {
+                        OkHttpClient client  = new OkHttpClient();     //this object will handle http requests
+                        MediaType mediaType  = MediaType.parse("application/x-www-form-urlencoded");
+                        RequestBody body = RequestBody.create(mediaType,
+                                "phoneNumber="+userPhone +
+                                        "&gpsLatitude="+latitude +
+                                        "&gpsLongitude="+longitude);
+                        Request request = new Request.Builder()
+                                .url(Woyalla.API_URL + "clients/update/phoneNumber")
+                                .put(body)
+                                .addHeader("authorization", "Basic dGhlVXNlcm5hbWU6dGhlUGFzc3dvcmQ=")
+                                .addHeader("cache-control", "no-cache")
+                                .addHeader("content-type", "application/x-www-form-urlencoded")
+                                .build();
+
+                        Response response = client.newCall(request).execute();
+                        final String responseBody = response.body().string().toString();
+                        Log.i("responseFull", responseBody);
+
+                        JSONObject myObject = (JSONObject) new JSONTokener(responseBody).nextValue();
+
+                    /**
+                     * If we get OK response
+                     *
+                     * */
+                        if(myObject.get("status").toString().startsWith("ok") ){
+
+                            /**
+                             * If the driver status is on service
+                             */
+                            if(myObject.get("data")!=null) {
+                                JSONObject json_response = myObject.getJSONObject("data");
+                                JSONArray json_drivers = json_response.getJSONArray("nearbyDrivers");
+                                addDriver(json_drivers);
+
+                                MainActivity.this.runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        ShowDialog("Your location is sent.\nNear bye drivers also added.");
+                                    }
+                                });
+
+                            }
+
+                        }
+                    /**
+                     * If we get error response
+                     *
+                     * */
+                        if(myObject.get("status").toString().startsWith("error") ) {
+                            MainActivity.this.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    ShowDialog("An error occured while sending your location to the server. ");
+                                }
+                            });
+                        }
+
+
+                        }catch(Exception e){
+
+                    }
+                }
+            };
+
+            send.start();
+
+        }
+        else{
+            gps.showSettingsAlert();
+        }
+
+    }
+
+    private void addDriver(JSONArray json_drivers) {
+            try{
+                if(json_drivers.length()>0){
+                    for(int i=0;i<json_drivers.length();i++){
+                        JSONObject obj = json_drivers.getJSONObject(i);
+                        ContentValues cv = new ContentValues();
+                        cv.put(Database.NEARBYE_DRIVERS_FIELDS[0], obj.getString("distanceFromCilent"));
+                        cv.put(Database.NEARBYE_DRIVERS_FIELDS[1], obj.getString("gpsLatitude"));
+                        cv.put(Database.NEARBYE_DRIVERS_FIELDS[2], obj.getString("gpsLongitude"));
+
+                        long check = Woyalla.myDatabase.insert(Database.Table_NEARBYE_DRIVER,cv);
+                        if(check>0){
+                            Log.i("driverarray","New drivers array added ");
+                        }
+                    }
+                }
+            }catch (Exception e){
+            }
+
+    }
+
+    /**
+     * Show message
+     * */
+    public void ShowDialog(String message) {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case DialogInterface.BUTTON_POSITIVE:
+                        // Yes button clicked
+                        break;
+                }
+            }
+        };
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.app_name)
+                .setMessage(message)
+                .setPositiveButton("Ok", dialogClickListener).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            switch (requestCode){
+                case 1:
+                    if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                        startCall();
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this,"Permission denied! Please Grant Permission",Toast.LENGTH_LONG).show();
+                    }
+            }
     }
 
     @Override
@@ -84,7 +276,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -94,12 +286,15 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
 
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
+        int id = item.getItemId();
+        if (id == R.id.menu_update_my_location) {
+            reload();
+            return true;
+        }
+        else if (id == R.id.menu_show_drivers) {
+
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -132,6 +327,40 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    //reload the client map & data
+    public void reload(){
+        //remove all near bye drivers
+        Woyalla.myDatabase.Delete_All(Database.Table_NEARBYE_DRIVER);
+        moveMapToMyLocation();
+        Toast.makeText(MainActivity.this,"Location is reloaded \nPrevious near bye drivers has been removed also." +
+                " \nThe map is also set to your current location.",Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * get current location from the gps tracker object
+     * then view it on the map
+     */
+    private void moveMapToMyLocation() {
+        //Creating a LatLng Object to store Coordinates
+        if(gps.canGetLocation()) {
+            LatLng latLng = new LatLng(gps.getLatitude(), gps.getLongitude());
+
+            //Adding marker to map
+            mMap.addMarker(new MarkerOptions()
+                    .position(latLng) //setting position
+                    .draggable(true) //Making the marker draggable
+                    .title("My Location")); //Adding a title
+
+            //Moving the camera
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+            //Animating the camera
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(25));
+
+        }
     }
 
     public void logOut(){

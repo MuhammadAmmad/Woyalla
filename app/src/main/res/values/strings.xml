@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Woyalla</string>
     <string name="title_activity_maps">Woyala</string>
+    <string name="call_center_number">0911773469</string>
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -8,6 +9,8 @@
 
 
     <string name="action_settings">Settings</string>
+    <string name="menu_my_location">Update My Location</string>
+    <string name="menu_show_drivers">Show drivers</string>
     <string name="btn_login">Login</string>
     <string name="hint_name">Enter Name</string>
     <string name="hint_phone">Enter Phone Number</string>
