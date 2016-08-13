@@ -7,6 +7,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.brainup.woyalla.Model.Driver;
+
+import java.util.ArrayList;
+
 public class Database {
     public static final String Table_USER = "USER";
     public static final String Table_NEARBYE_DRIVER = "NEARBYE_DRIVERS";
@@ -121,6 +125,28 @@ public class Database {
 
         }
         return pos;
+    }
+
+    public ArrayList<Driver> getNearByeCars(){
+        ArrayList<Driver> drivers = new ArrayList<Driver>();
+        try{
+            Cursor c = myDatabase.query(Table_NEARBYE_DRIVER, getColumns(Table_NEARBYE_DRIVER), null, null, null, null, null);
+            if (c.getCount() > 0) {
+                c.moveToFirst();
+                for(int i=0;i<c.getCount();i++){
+                    c.moveToPosition(i);
+                    Driver dis = new Driver();
+                    dis.setDistance(Double.parseDouble(c.getString(c.getColumnIndex(NEARBYE_DRIVERS_COLUMN[1]))));
+                    dis.setLatitude(Double.parseDouble(c.getString(c.getColumnIndex(NEARBYE_DRIVERS_COLUMN[2]))));
+                    dis.setLongitude(Double.parseDouble(c.getString(c.getColumnIndex(NEARBYE_DRIVERS_COLUMN[3]))));
+                    drivers.add(dis);
+                }
+            }
+        }catch (Exception e){
+
+        }
+
+        return drivers;
     }
 
     private String[] getColumns(String DB_Table){

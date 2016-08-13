@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.brainup.woyalla.Database.Database;
+import com.brainup.woyalla.Model.Driver;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -35,6 +36,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
+import java.util.ArrayList;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -83,11 +86,14 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void checkGPS() {
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //if it permission not granted, request a dialog box that asks the client to grant the permission
+            //the response will be handled by onRequestPermissionResult method
+            ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},2);
+            return;
+        }
         if(!gps.canGetLocation()){
             gps.showSettingsAlert();
-        }
-        else {
-            moveMapToMyLocation();
         }
     }
 
@@ -260,6 +266,15 @@ public class MainActivity extends AppCompatActivity
                     else{
                         Toast.makeText(MainActivity.this,"Permission denied! Please Grant Permission",Toast.LENGTH_LONG).show();
                     }
+                    break;
+                case 2:
+                    if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                        Toast.makeText(MainActivity.this,"Permission granted! Thank you!",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this,"Permission denied! Please Grant Permission",Toast.LENGTH_SHORT).show();
+                        checkGPS();
+                    }
             }
     }
 
@@ -292,7 +307,7 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
         else if (id == R.id.menu_show_drivers) {
-
+            showNearByeCars();
             return true;
         }
 
@@ -329,6 +344,30 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    public void showNearByeCars(){
+        ArrayList<Driver> drivers = Woyalla.myDatabase.getNearByeCars();
+        if(drivers.size()>0){
+            mMap.clear();
+            moveMapToMyLocation();
+            Toast.makeText(this,"Getting list of near bye cars. ",Toast.LENGTH_LONG).show();
+            for(int i = 0; i <drivers.size(); i++){
+                LatLng latLng = new LatLng(drivers.get(i).getLatitude(),drivers.get(i).getLongitude());
+                createMarkers(latLng,"Taxi "+i,"Distance: "+drivers.get(i).getDistance());
+            }
+        }
+        else{
+            Toast.makeText(this,"Please make a call first",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    public void createMarkers(LatLng latLng,String title,String snippet){
+        mMap.addMarker(new MarkerOptions()
+                .position(latLng) //setting position
+                .snippet(snippet)
+                .draggable(true) //Making the marker draggable
+                .title(title)); //Adding a title
+    }
 
     //reload the client map & data
     public void reload(){
@@ -360,6 +399,9 @@ public class MainActivity extends AppCompatActivity
             //Animating the camera
             mMap.animateCamera(CameraUpdateFactory.zoomTo(25));
 
+        }
+        else {
+            gps.showSettingsAlert();
         }
     }
 
@@ -393,10 +435,7 @@ public class MainActivity extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        moveMapToMyLocation();
     }
 
     //share app method
