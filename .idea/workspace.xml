@@ -17,25 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="365eb440-92ec-4490-8024-4693398fec71" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/nav_icon.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/nav_icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/debug/res/menu/main.xml" afterPath="$PROJECT_DIR$/app/src/debug/res/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Splash.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Splash.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="Woyalla.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,15 +72,15 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.3261391">
-              <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
+              <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
               <folding>
                 <element signature="e#2578#2609#0" expanded="true" />
                 <element signature="e#2611#2643#0" expanded="true" />
                 <element signature="e#4373#5152#0" expanded="true" />
                 <element signature="e#5151#5152#0" expanded="true" />
                 <element signature="e#5315#5368#0" expanded="true" />
-                <element signature="e#17986#18003#0" expanded="true" />
-                <element signature="e#18841#18884#0" expanded="true" />
+                <element signature="e#18513#18530#0" expanded="true" />
+                <element signature="e#19368#19411#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2984,8 +2966,8 @@
             <element signature="e#4373#5152#0" expanded="true" />
             <element signature="e#5151#5152#0" expanded="true" />
             <element signature="e#5315#5368#0" expanded="true" />
-            <element signature="e#17986#18003#0" expanded="true" />
-            <element signature="e#18841#18884#0" expanded="true" />
+            <element signature="e#18513#18530#0" expanded="true" />
+            <element signature="e#19368#19411#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3257,15 +3239,15 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3261391">
-          <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
+          <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
           <folding>
             <element signature="e#2578#2609#0" expanded="true" />
             <element signature="e#2611#2643#0" expanded="true" />
             <element signature="e#4373#5152#0" expanded="true" />
             <element signature="e#5151#5152#0" expanded="true" />
             <element signature="e#5315#5368#0" expanded="true" />
-            <element signature="e#17986#18003#0" expanded="true" />
-            <element signature="e#18841#18884#0" expanded="true" />
+            <element signature="e#18513#18530#0" expanded="true" />
+            <element signature="e#19368#19411#0" expanded="true" />
           </folding>
         </state>
       </provider>

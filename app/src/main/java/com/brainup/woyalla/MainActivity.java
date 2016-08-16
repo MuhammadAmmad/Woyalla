@@ -349,6 +349,23 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    /**
+     * Handle map type change from normal to satellite and vise versal
+     */
+    private void handleMapTypeChange() {
+
+        if(mMap != null) {
+            if (mMap.getMapType() == GoogleMap.MAP_TYPE_NORMAL) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            } else if (mMap.getMapType() == GoogleMap.MAP_TYPE_SATELLITE) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            }
+        }
+        else{
+            Log.i("changemap","Map type is null");
+        }
+
+    }
 
     /**
      * This method will get near bye taxi info from local database and points them on the map
