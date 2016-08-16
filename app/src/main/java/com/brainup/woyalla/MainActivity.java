@@ -7,8 +7,10 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -30,6 +32,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -70,6 +74,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //initialize the gps tracker object
+        gps  = new GPSTracker(this);
+
         //map view initialization
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -78,22 +85,28 @@ public class MainActivity extends AppCompatActivity
         //call button initialization
         call = (Button) findViewById(R.id.call);
 
-        //initialize the gps tracker object
-        gps  = new GPSTracker(this);
-
         checkGPS();
         handleCallButton();
     }
 
-    private void checkGPS() {
+    private boolean checkGPS() {
+        gps = new GPSTracker(MainActivity.this);
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             //if it permission not granted, request a dialog box that asks the client to grant the permission
             //the response will be handled by onRequestPermissionResult method
             ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},2);
-            return;
+            return false;
         }
-        if(!gps.canGetLocation()){
-            gps.showSettingsAlert();
+        else if(!Checkups.isNetworkAvailable(MainActivity.this)){
+            Checkups.showDialog("No connection found!\nPlease open cellular data or connect to wifi for the app to work properly.",MainActivity.this);
+            return false;
+        }
+        else if(!gps.canGetLocation()){
+            Checkups.showSettingsAlert(MainActivity.this);
+            return false;
+        }
+        else {
+            return true;
         }
     }
 
@@ -108,7 +121,9 @@ public class MainActivity extends AppCompatActivity
                     ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CALL_PHONE},1);
                     return;
                 }
+                if(checkGPS()){
                     startCall();
+                }
             }
         });
 
@@ -131,12 +146,14 @@ public class MainActivity extends AppCompatActivity
             final double latitude = gps.getLatitude();
             final double longitude = gps.getLongitude();
             final String userPhone = Woyalla.myDatabase.get_Value_At_Top(Database.Table_USER,Database.USER_FIELDS[1]);
+            final int user_id = Woyalla.myDatabase.get_Top_ID(Database.Table_USER);
 
             ContentValues cv = new ContentValues();
             cv.put(Database.USER_FIELDS[2],latitude+"");
             cv.put(Database.USER_FIELDS[3],longitude+"");
 
-            Woyalla.myDatabase.insert(Database.Table_USER,cv);
+            Woyalla.myDatabase.update(Database.Table_USER,cv,user_id);  //update my current location
+
             Thread send = new Thread(){
                 @Override
                 public void run() {
@@ -175,10 +192,14 @@ public class MainActivity extends AppCompatActivity
                                 JSONArray json_drivers = json_response.getJSONArray("nearbyDrivers");
                                 addDriver(json_drivers);
 
+                                //once we get the list of drivers, build and send a notification to the client
+                                Notifications notifications = new Notifications(getApplicationContext());
+                                notifications.buildNotification();
+
                                 MainActivity.this.runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        ShowDialog("Your location is sent.\nNear bye drivers also added.");
+                                        Checkups.showDialog("Your location is sent.\nNear bye drivers also added.",MainActivity.this);
                                     }
                                 });
 
@@ -193,11 +214,10 @@ public class MainActivity extends AppCompatActivity
                             MainActivity.this.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    ShowDialog("An error occured while sending your location to the server. ");
+                                    Checkups.showDialog("An error occurred while sending your location to the server. ",MainActivity.this);
                                 }
                             });
                         }
-
 
                         }catch(Exception e){
 
@@ -235,25 +255,6 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    /**
-     * Show message
-     * */
-    public void ShowDialog(String message) {
-        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which) {
-                    case DialogInterface.BUTTON_POSITIVE:
-                        // Yes button clicked
-                        break;
-                }
-            }
-        };
-        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.app_name)
-                .setMessage(message)
-                .setPositiveButton("Ok", dialogClickListener).show();
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -306,8 +307,12 @@ public class MainActivity extends AppCompatActivity
             reload();
             return true;
         }
-        else if (id == R.id.menu_show_drivers) {
+        if (id == R.id.menu_show_drivers) {
             showNearByeCars();
+            return true;
+        }
+        if (id == R.id.menu_change_map_type) {
+            handleMapTypeChange();
             return true;
         }
 
@@ -344,6 +349,10 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
+    /**
+     * This method will get near bye taxi info from local database and points them on the map
+     */
     public void showNearByeCars(){
         ArrayList<Driver> drivers = Woyalla.myDatabase.getNearByeCars();
         if(drivers.size()>0){
@@ -361,19 +370,31 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    /**
+     * plot and display a near bye taxi on the map
+     * @param latLng the current latitude and longitude of the taxi
+     * @param title the title that will be displayed on the marker
+     * @param snippet a small description of the taxi
+     */
+
     public void createMarkers(LatLng latLng,String title,String snippet){
         mMap.addMarker(new MarkerOptions()
                 .position(latLng) //setting position
                 .snippet(snippet)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_taxi))
                 .draggable(true) //Making the marker draggable
                 .title(title)); //Adding a title
     }
 
-    //reload the client map & data
+    /**
+     * reload the client map & data
+     */
     public void reload(){
         //remove all near bye drivers
         Woyalla.myDatabase.Delete_All(Database.Table_NEARBYE_DRIVER);
         moveMapToMyLocation();
+        Log.i("myLocation","Latitude "+ gps.getLatitude() + "\n Longitude"+gps.getLongitude());
+
         Toast.makeText(MainActivity.this,"Location is reloaded \nPrevious near bye drivers has been removed also." +
                 " \nThe map is also set to your current location.",Toast.LENGTH_LONG).show();
     }

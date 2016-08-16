@@ -9,8 +9,10 @@
 
 
     <string name="action_settings">Settings</string>
+    <string name="nav_sub_title">Get Taxi Easily</string>
     <string name="menu_my_location">Update My Location</string>
-    <string name="menu_show_drivers">Show drivers</string>
+    <string name="change_map_type">Change Map Type</string>
+    <string name="menu_show_drivers">Show Drivers</string>
     <string name="btn_login">Login</string>
     <string name="hint_name">Enter Name</string>
     <string name="hint_phone">Enter Phone Number</string>

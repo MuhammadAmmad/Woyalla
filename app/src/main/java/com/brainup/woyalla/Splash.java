@@ -2,6 +2,7 @@ package com.brainup.woyalla;
 
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +36,28 @@ public class Splash extends Activity {
 	}
 
 	public synchronized void getNextActivity() {
+
+		ContentValues cv = new ContentValues();
+		cv.put(Database.NEARBYE_DRIVERS_FIELDS[0],"2");
+		cv.put(Database.NEARBYE_DRIVERS_FIELDS[1],"8.98123");
+		cv.put(Database.NEARBYE_DRIVERS_FIELDS[2],"38.86160252");
+
+
+		ContentValues cv2 = new ContentValues();
+		cv2.put(Database.NEARBYE_DRIVERS_FIELDS[0],"2");
+		cv2.put(Database.NEARBYE_DRIVERS_FIELDS[1],"8.9912012");
+		cv2.put(Database.NEARBYE_DRIVERS_FIELDS[2],"38.86160252");
+
+
+		ContentValues cv3 = new ContentValues();
+		cv3.put(Database.NEARBYE_DRIVERS_FIELDS[0],"2");
+		cv3.put(Database.NEARBYE_DRIVERS_FIELDS[1],"8.9095957");
+		cv3.put(Database.NEARBYE_DRIVERS_FIELDS[2],"38.86160252");
+
+
+		Woyalla.myDatabase.insert(Database.Table_NEARBYE_DRIVER,cv);
+		Woyalla.myDatabase.insert(Database.Table_NEARBYE_DRIVER,cv2);
+		Woyalla.myDatabase.insert(Database.Table_NEARBYE_DRIVER,cv3);
 
 		int count = Woyalla.myDatabase.count(Database.Table_USER);  //check if there is any user in the database
 		Log.i("count", "count "+count);

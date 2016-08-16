@@ -293,7 +293,6 @@ public class Login extends AppCompatActivity {
                 }
             });
         }
-
     }
 
     public void ShowDialog(String message) {
