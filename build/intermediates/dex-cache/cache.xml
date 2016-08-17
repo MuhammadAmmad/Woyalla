@@ -1,3 +1,495 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a378adc3106cb3560ab3dfed05f1fda26cff5b49">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-9.2.0_75a783ee5825f5b7cbecca07e3a842c2fa27f196\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_f17d970d7368bed3cfd27923411929a624ffd2ff\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_4424ac3e7fcc25804fbf5a30e73aed9505dc1a5c\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-contextmanager\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8ad1b5663f367dac619256d75fb08a98c7baa4f4">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-contextmanager-9.2.0_9599c10cf4edf6445514286d29a82672dd9589bd\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="dc4c18602ecffb3e69cda6cdc51ba4feac0f97d7">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-9.2.0_3f417e50670ea9c0902a8ee86bf3e5ad28e85127\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fa6c324604383981fb74c4cb036d4171ed0a9a02">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-9.2.0_240764b9528b68a8a5728a39e7da4e2f09055157\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\me.tatarka.support\jobscheduler\0.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8d5fa4ca32cbbd491d4e027d16f02e897dfed0f2">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\me.tatarka.support-jobscheduler-0.1.1_551263ee69743edced741d11237214f6b4ba2670\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast-framework\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="163b095362fd14d682ac311bf672c2fb54de5078">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-9.2.0_06a3732d78c9965f7986f87bc748ad9a7745035b\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="20ca7888c59f63d439f218a8810c88039f8bc7db">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-9.2.0_2eb84da539cd8db0f135faf8a2451b6021cefe7d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Roger\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.0.1\68cddd9aec83d23f789f72bfdc933db245c4a635\kotlin-stdlib-1.0.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="68cddd9aec83d23f789f72bfdc933db245c4a635">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-stdlib-1.0.1_292275e379a1fdddc9531e0ce3234572215a625d\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="33b5900f82d19fd3dacee518363b249ace77b8f5">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-9.2.0_e21369ed390a4e2871a1261ef94e6d12e6e96715\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-common-9.2.0_eb46c293a493aac9d0761d04cc820405eacd4414\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-23.0.0_a84c6ad0ee5bb2b0b8987f3a146792cbcf0c7098\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="be009dbe07b3a252c8cda07fc948ac713d2f5171">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-9.2.0_fae3d3d146164ce9e5ef264a949ff57aef07ed21\classes.dex" />
+    </item>
+    <item
+        jar="C:\Program Files\Android\Android Studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.2.4_313aff129984a0a45e086871ec03bfcc02e7284e\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="535d4497b5fa5d451e07a043e9e220d5c25ab7c7">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-9.2.0_7c3055d4cf30ea381c49d32a69947479756690a7\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="982031d2aa9652bc955d0b581ec70378c0adfc56">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-9.2.0_ec1069a86a1a376822826dbe1eab7144984d7d4b\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="404f4108b41050173f93836f5b35efdd9525a0ad">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-9.2.0_a433534283ea8a599b16d98d2a692e2616cd30ce\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d7572433ba21aa9e4624c819fa738b2748b82d05">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-9.2.0_0c04cb4ad5eba8b589484eaef1b722d1599187a5\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7c39a4b431976abc46d3cf6344c75d06c769cd35">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-9.2.0_b89ac7d7113aa58b281939e22fad9bc89a31701f\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="33203b081101ca6242a4cd746aafe5fc2dd98a34">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-9.2.0_496c6fec2ef9cfbe138bc81913d334acb0c91905\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Roger\.gradle\caches\modules-2\files-2.1\com.github.kittinunf.result\result\1.0.1\3232fdf0a5501dbacf605a372607801bc4e10c82\result-1.0.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3232fdf0a5501dbacf605a372607801bc4e10c82">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\result-1.0.1_c41689e688d2c4898b4a870dc4a443fc999c8285\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f56a68df45e18ce77814db6553fdaa229308f49b">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-9.2.0_e2ed295ce0d8237292d8b5f34bc4a9b102b121f7\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="dd7b4a8e01cafa79a0b228b2ee5bd57ae5577444">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-9.2.0_d429704862e7280f3da8e4231a4e4389dc38ba34\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.2.0_472dcdc9b6a20a2ec884454e5b93168696922d89\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1dc44c4798cbd79e95e4838a3fdc734c0e3f895f">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-9.2.0_1e4064b7d41f92b3de089c1627126fbc5b67159f\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_6459b9ee5b5da739ec2258f923b61d1f28e4df26\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a03f4d605b0f29222c2ddf8b7896258cb4b92def">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-9.2.0_d3216f04ce112a36167a18d32e4a34fc377b71e9\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0595e77431edaba6793410f9bfa3603c063c58e7">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-9.2.0_fd0894bd3f0bd1e60ede10b65330f90ffaefd273\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="61c6a26d87b6c18cef4b48b842fa88fb3f3b6cad">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f8e11b13204556bbcb1841ae4c4d5d97787c9b8c\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7378806b630886994099d03c369983f2848a609f">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-9.2.0_739746dd3c48ba933d11e2c052d83b82df8e7bbc\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_bca08cfdf728910f3cb97fb055305fe3afd42563\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b53d61bae49278c0fa202d9066d2e72fc151c1e8">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-9.2.0_5be8894971a1d582a53682c32dbd762c257c28ee\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.github.kittinunf.fuel\fuel-android\1.1.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c769121990f3c66893d6d60d2e3cb5a556bfb69c">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.kittinunf.fuel-fuel-android-1.1.2_cc200649994c41f56a52afce21259f02deab007d\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4838df6db988160b107e954e02a745370df543b6">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-9.2.0_cd72228e4dec31b07d29aa566d65ed12a0ef0144\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="18e52280643effbab30370b073e456d670a0db54">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-9.2.0_e247b6bb49d22ffdda099b88003cae236b53b321\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Roger\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_10906ae5d00070842b211b0f99087183b7648a62\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="74694bf98bd1f856cf478bd0c516531801badced">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-9.2.0_ebcef9e05a5c00909973e46465a34dcdc076bf82\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_8974e3aa0794a6467d9a1b6c7c99b08bc14a2b05\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-23.4.0_9378390fed377a0b325f8d20c4ce1ad412105577\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="811202a9098047576814fc2171b56b83b537a8b9">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-9.2.0_2064b1f910512c0910bd085c3b07bde739ccf1cc\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3c8fcebabb73df25937704f5566bf6c388ea941d">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-9.2.0_735fd176beb46d084fd841d2e6b406823ecd34ad\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a0712565a784bedd07ada2393c95e0b1e288840f">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-9.2.0_af7e106b9ca39ee4aa6bafe70c41136579188384\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Roger\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.9.0_8fe99d3932288cd30547fac5c1ad98e741b8aa5f\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fb15fd9774b5c51dcb39d8e6fa1b6f06bcd1cd34">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.2.0_7d67887bc5aafdee23143796150c44d1c70be5c0\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="30489a97b06cc3945bdbcc1770089af9e3b3b64d">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.2.0_13bb0743a857cd59349d33b904d415279955689b\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e91e1f335dc418d0138991a1d5155f0490ab6082">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-9.2.0_0df01293f2e8da26b318d0b15b1e4e212f507a12\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ce9432b50a02be101bc491a1b38d3904200bd988">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-9.2.0_ab1637b0c9ef99d97fddc1c69a7f5eebc84d7005\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_2747a61b88235be46d3e3b980e0c4a7d3ca40d5f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Roger\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.1_86cf7b0b948de01c5ff9b4bdc197c28c830e6e55\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Roger\.gradle\caches\modules-2\files-2.1\com.github.kittinunf.fuel\fuel\1.1.2\f6398b14fc327faa11a3c61930503e019c7a418d\fuel-1.1.2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f6398b14fc327faa11a3c61930503e019c7a418d">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\fuel-1.1.2_811695523e1965625466d238d72f0761f7b7cacd\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.2.0_8196510b54313dabfbfeefe3448919c849dd8f3c\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_fe6c19f54302cdb83db9a96e87225f673ff5e2f4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Roger\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-runtime\1.0.1\124852ea8cdd3d89827923b5e79627e8a7c314b2\kotlin-runtime-1.0.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="124852ea8cdd3d89827923b5e79627e8a7c314b2">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-runtime-1.0.1_44380c4a689713d495affecebd9405d2f41fb349\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8ec9ae00d45e758ac5b7a1c5dc0daa8a4b24280f">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-9.2.0_058c8e0dc8b2021d5c0f5c9fd62e79fc00789284\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="951511c718596afa812df7f98cf8c1155e2366a4">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_c1bc00e53f7d7a7a2d9d8bf11caa9ffe3cdcd110\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="39261f58509b1a379df041f03da394c29da05395">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-9.2.0_a8a874211f7c9689058d7c868ad52109a7061322\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fbb50f7f89342c915898c9376a67229e2fcee286">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-9.2.0_8d5f844740eee1fe7bc80ca8f3cb4f2b27ff7c6a\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7428f0d1debdcf1b5792a26146e51a38d992d04d">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-9.2.0_b74af8b7335f02d748d7f644f7bf9d9e0bf73482\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="21bb89120d84fa29afeb0f9c0ebf415bc3b45a7e">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-9.2.0_58181bcf4913082f5072d0c6b48d483a2c790dc5\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="08cdd337d1d9247eb915f0ab365624dd7966e7fa">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-9.2.0_9c41d8c6828a4d45b0daa6b40e21660347af38ee\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7c7c21cc7a45d5c2a57d77f4840d4d4ea3c7604f">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-9.2.0_8a24af8ae40f320277d314badcdef9b806e9d15f\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e791f7f2fbf9ca5b3b576916533f844dfb384024">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-module-9.2.0_e8c3000489042b969ed65d1cdd81c898a12af81d\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f315c6b5b99081f16a79c9aaa557328a4644fe63">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-9.2.0_89523067aa6ab7d5a0a4a2cd5e89591c39faf040\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5acfd484717d9175c175569a114d46dbeec074ed">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-9.2.0_471512d127143b32f117a7de2a23e3b61853e75b\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_b9f735473f21e24ede1614ec8842a103b641aa82\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="299e04800d1169b9f3dd04c376c7b266a3594cca">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-9.2.0_0db9e28494bbc1dbce405632c8e66c82ea3af724\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a06eb7761fca120bbb46b34b930a3a3462ba9d7f">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-9.2.0_1ddd7f05930a684ee39de65b8276a97021300bd2\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e3f200938bb888d83c2da807cb6aee983baae254">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-9.2.0_f1a210f74b2bd6105ae599a7feac95685ecb346c\classes.dex" />
+    </item>
+    <item
+        jar="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="dd7676ac12aa6653718b7ea33d93ce9d6915d526">
+        <dex dex="E:\Projects\BrainUpTech\App\Woyalla\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.2.0_d3da5cfe932af36956e65aa494c9b3c36cfc1e00\classes.dex" />
+    </item>
+
+</items>

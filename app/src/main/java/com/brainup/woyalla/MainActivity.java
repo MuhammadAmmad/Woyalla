@@ -131,12 +131,12 @@ public class MainActivity extends AppCompatActivity
 
     public void startCall() {
         Toast.makeText(MainActivity.this, "Calling the server ", Toast.LENGTH_SHORT).show();
+
         String phoneNumber = getResources().getString(R.string.call_center_number);
         Intent intent = new Intent(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + phoneNumber));
-        startActivity(intent);
-
         sendGPSLocation();
+        startActivity(intent);
     }
 
     private void sendGPSLocation() {
@@ -398,7 +398,7 @@ public class MainActivity extends AppCompatActivity
         mMap.addMarker(new MarkerOptions()
                 .position(latLng) //setting position
                 .snippet(snippet)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_taxi))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car_map))
                 .draggable(true) //Making the marker draggable
                 .title(title)); //Adding a title
     }
@@ -409,6 +409,7 @@ public class MainActivity extends AppCompatActivity
     public void reload(){
         //remove all near bye drivers
         Woyalla.myDatabase.Delete_All(Database.Table_NEARBYE_DRIVER);
+        mMap.clear();
         moveMapToMyLocation();
         Log.i("myLocation","Latitude "+ gps.getLatitude() + "\n Longitude"+gps.getLongitude());
 
@@ -479,10 +480,10 @@ public class MainActivity extends AppCompatActivity
     //share app method
 
     public void shareApp(){
-        String shareBody = "Get Free amharic dictionary  market://details?id=com.brainup.woyalla";
+        String shareBody = "Get Weyala app at  market://details?id=com.brainup.woyalla";
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Amharic dictionary");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Weyala");
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(sharingIntent, getResources().getString(R.string.app_name)));
     }

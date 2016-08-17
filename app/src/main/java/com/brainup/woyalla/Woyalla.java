@@ -9,7 +9,8 @@ import com.brainup.woyalla.Database.Database;
  */
 public class Woyalla extends Application {
 
-    public static final String API_URL  = "http://192.168.137.1/api.weyala.net/";
+   // public static final String API_URL  = "http://192.168.2.100/api.weyala.net/";
+    public static final String API_URL  = "http://weyala.net/api/";
 
     public static Database myDatabase;
 
