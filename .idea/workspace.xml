@@ -25,23 +25,18 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/debug/res/menu/activity_main_drawer.xml" afterPath="$PROJECT_DIR$/app/src/debug/res/menu/activity_main_drawer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Checkups.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Checkups.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Comment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Comment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/GPSTracker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/GPSTracker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/debug/res/menu/main.xml" afterPath="$PROJECT_DIR$/app/src/debug/res/menu/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Notifications.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Notifications.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Woyalla.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Woyalla.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/about.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/comment.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/comment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Splash.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Splash.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-am/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-am/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="Woyalla.iws" />
@@ -70,63 +65,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Woyalla.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Woyalla.java">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48825064">
-              <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="265" column="7" selection-start-line="264" selection-start-column="0" selection-end-line="286" selection-end-column="5" />
+            <state vertical-scroll-proportion="12.605744">
+              <caret line="431" column="8" selection-start-line="431" selection-start-column="8" selection-end-line="431" selection-end-column="8" />
               <folding>
-                <element signature="e#2635#2666#0" expanded="true" />
-                <element signature="e#2668#2700#0" expanded="true" />
-                <element signature="e#4014#4071#0" expanded="true" />
-                <element signature="e#5251#5309#0" expanded="true" />
-                <element signature="e#5369#5422#0" expanded="true" />
-                <element signature="e#9233#9290#0" expanded="true" />
-                <element signature="e#9876#9942#0" expanded="true" />
-                <element signature="e#11734#11795#0" expanded="true" />
-                <element signature="e#12054#12116#0" expanded="true" />
-                <element signature="e#12250#12311#0" expanded="true" />
-                <element signature="e#15542#15599#0" expanded="true" />
-                <element signature="e#15820#15862#0" expanded="true" />
-                <element signature="e#15973#16017#0" expanded="true" />
-                <element signature="e#17006#17043#0" expanded="true" />
-                <element signature="e#18584#18620#0" expanded="true" />
-                <element signature="e#19777#19794#0" expanded="true" />
-                <element signature="e#19807#19844#0" expanded="true" />
-                <element signature="e#19881#19909#0" expanded="true" />
-                <element signature="e#19967#19994#0" expanded="true" />
-                <element signature="e#20658#20701#0" expanded="true" />
+                <element signature="e#3000#3150#0" expanded="true" />
+                <element signature="e#3149#3150#0" expanded="true" />
+                <element signature="e#3811#3828#0" expanded="true" />
+                <element signature="e#7174#7241#0" expanded="true" />
+                <element signature="e#7612#7671#0" expanded="true" />
+                <element signature="e#8626#8696#0" expanded="true" />
+                <element signature="e#9229#9273#0" expanded="true" />
+                <element signature="e#9839#9883#0" expanded="true" />
+                <element signature="e#10185#10229#0" expanded="true" />
+                <element signature="e#10468#10512#0" expanded="true" />
+                <element signature="e#11094#11111#0" expanded="true" />
+                <element signature="e#11185#11218#0" expanded="true" />
+                <element signature="e#11875#11892#0" expanded="true" />
+                <element signature="e#11966#11999#0" expanded="true" />
+                <element signature="e#12280#12313#0" expanded="true" />
+                <element signature="e#12626#12658#0" expanded="true" />
+                <element signature="e#14437#14906#0" expanded="true" />
+                <element signature="e#14905#14906#0" expanded="true" />
+                <element signature="e#15054#15071#0" expanded="true" />
+                <element signature="e#15101#15158#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Splash.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Splash.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Language.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Language.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -2403,25 +2368,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Model/Driver.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Database/Database.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/debug/res/menu/main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Splash.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/splash.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Checkups.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/GPSTracker.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Notifications.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/about.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/comment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/login.xml" />
         <option value="$PROJECT_DIR$/app/src/debug/res/menu/activity_main_drawer.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Comment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Language.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Woyalla.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Splash.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/login.xml" />
+        <option value="$PROJECT_DIR$/app/src/debug/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java" />
       </list>
     </option>
   </component>
@@ -2492,110 +2457,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Woyalla" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Woyalla" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="strings.xml" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Woyalla" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Woyalla" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Woyalla" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Woyalla" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="woyalla" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2940,7 +2801,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2957,7 +2818,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2993,24 +2854,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
           <folding>
-            <element signature="e#3334#3351#0" expanded="true" />
-            <element signature="e#6536#6847#0" expanded="true" />
-            <element signature="e#6697#6764#0" expanded="true" />
-            <element signature="e#6846#6847#0" expanded="true" />
-            <element signature="e#7135#7194#0" expanded="true" />
-            <element signature="e#8149#8219#0" expanded="true" />
-            <element signature="e#8752#8796#0" expanded="true" />
-            <element signature="e#9362#9406#0" expanded="true" />
-            <element signature="e#9598#9786#0" expanded="true" />
-            <element signature="e#9708#9752#0" expanded="true" />
-            <element signature="e#9785#9786#0" expanded="true" />
-            <element signature="e#9991#10035#0" expanded="true" />
-            <element signature="e#10617#10634#0" expanded="true" />
-            <element signature="e#10708#10741#0" expanded="true" />
-            <element signature="e#11398#11415#0" expanded="true" />
-            <element signature="e#11489#11522#0" expanded="true" />
-            <element signature="e#11803#11836#0" expanded="true" />
-            <element signature="e#12149#12181#0" expanded="true" />
+            <element signature="e#3811#3828#0" expanded="true" />
+            <element signature="e#7013#7324#0" expanded="true" />
+            <element signature="e#7174#7241#0" expanded="true" />
+            <element signature="e#7323#7324#0" expanded="true" />
+            <element signature="e#7612#7671#0" expanded="true" />
+            <element signature="e#8626#8696#0" expanded="true" />
+            <element signature="e#9229#9273#0" expanded="true" />
+            <element signature="e#9839#9883#0" expanded="true" />
+            <element signature="e#10075#10263#0" expanded="true" />
+            <element signature="e#10185#10229#0" expanded="true" />
+            <element signature="e#10262#10263#0" expanded="true" />
+            <element signature="e#10468#10512#0" expanded="true" />
+            <element signature="e#11094#11111#0" expanded="true" />
+            <element signature="e#11185#11218#0" expanded="true" />
+            <element signature="e#11875#11892#0" expanded="true" />
+            <element signature="e#11966#11999#0" expanded="true" />
+            <element signature="e#12280#12313#0" expanded="true" />
+            <element signature="e#12626#12658#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3027,26 +2888,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2635#2666#0" expanded="true" />
-            <element signature="e#2668#2700#0" expanded="true" />
-            <element signature="e#4014#4071#0" expanded="true" />
-            <element signature="e#5251#5309#0" expanded="true" />
-            <element signature="e#5369#5422#0" expanded="true" />
-            <element signature="e#9233#9290#0" expanded="true" />
-            <element signature="e#9876#9942#0" expanded="true" />
-            <element signature="e#11734#11795#0" expanded="true" />
-            <element signature="e#12054#12116#0" expanded="true" />
-            <element signature="e#12250#12311#0" expanded="true" />
-            <element signature="e#15542#15599#0" expanded="true" />
-            <element signature="e#15820#15862#0" expanded="true" />
-            <element signature="e#15973#16017#0" expanded="true" />
-            <element signature="e#17006#17043#0" expanded="true" />
-            <element signature="e#18584#18620#0" expanded="true" />
-            <element signature="e#19777#19794#0" expanded="true" />
-            <element signature="e#19807#19844#0" expanded="true" />
-            <element signature="e#19881#19909#0" expanded="true" />
-            <element signature="e#19967#19994#0" expanded="true" />
-            <element signature="e#20658#20701#0" expanded="true" />
+            <element signature="e#2744#2775#0" expanded="true" />
+            <element signature="e#2777#2809#0" expanded="true" />
+            <element signature="e#4123#4180#0" expanded="true" />
+            <element signature="e#5360#5418#0" expanded="true" />
+            <element signature="e#5478#5531#0" expanded="true" />
+            <element signature="e#9342#9399#0" expanded="true" />
+            <element signature="e#9985#10051#0" expanded="true" />
+            <element signature="e#11843#11904#0" expanded="true" />
+            <element signature="e#12163#12225#0" expanded="true" />
+            <element signature="e#12359#12420#0" expanded="true" />
+            <element signature="e#14576#14593#0" expanded="true" />
+            <element signature="e#14623#14680#0" expanded="true" />
+            <element signature="e#18025#18082#0" expanded="true" />
+            <element signature="e#18303#18345#0" expanded="true" />
+            <element signature="e#18456#18500#0" expanded="true" />
+            <element signature="e#19489#19526#0" expanded="true" />
+            <element signature="e#21067#21103#0" expanded="true" />
+            <element signature="e#22260#22277#0" expanded="true" />
+            <element signature="e#22290#22327#0" expanded="true" />
+            <element signature="e#22364#22392#0" expanded="true" />
+            <element signature="e#22450#22477#0" expanded="true" />
+            <element signature="e#23141#23184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3056,24 +2919,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3334#3351#0" expanded="true" />
-            <element signature="e#6536#6847#0" expanded="true" />
-            <element signature="e#6697#6764#0" expanded="true" />
-            <element signature="e#6846#6847#0" expanded="true" />
-            <element signature="e#7135#7194#0" expanded="true" />
-            <element signature="e#8149#8219#0" expanded="true" />
-            <element signature="e#8752#8796#0" expanded="true" />
-            <element signature="e#9362#9406#0" expanded="true" />
-            <element signature="e#9598#9786#0" expanded="true" />
-            <element signature="e#9708#9752#0" expanded="true" />
-            <element signature="e#9785#9786#0" expanded="true" />
-            <element signature="e#9991#10035#0" expanded="true" />
-            <element signature="e#10617#10634#0" expanded="true" />
-            <element signature="e#10708#10741#0" expanded="true" />
-            <element signature="e#11398#11415#0" expanded="true" />
-            <element signature="e#11489#11522#0" expanded="true" />
-            <element signature="e#11803#11836#0" expanded="true" />
-            <element signature="e#12149#12181#0" expanded="true" />
+            <element signature="e#3811#3828#0" expanded="true" />
+            <element signature="e#7013#7324#0" expanded="true" />
+            <element signature="e#7174#7241#0" expanded="true" />
+            <element signature="e#7323#7324#0" expanded="true" />
+            <element signature="e#7612#7671#0" expanded="true" />
+            <element signature="e#8626#8696#0" expanded="true" />
+            <element signature="e#9229#9273#0" expanded="true" />
+            <element signature="e#9839#9883#0" expanded="true" />
+            <element signature="e#10075#10263#0" expanded="true" />
+            <element signature="e#10185#10229#0" expanded="true" />
+            <element signature="e#10262#10263#0" expanded="true" />
+            <element signature="e#10468#10512#0" expanded="true" />
+            <element signature="e#11094#11111#0" expanded="true" />
+            <element signature="e#11185#11218#0" expanded="true" />
+            <element signature="e#11875#11892#0" expanded="true" />
+            <element signature="e#11966#11999#0" expanded="true" />
+            <element signature="e#12280#12313#0" expanded="true" />
+            <element signature="e#12626#12658#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3083,24 +2946,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3334#3351#0" expanded="true" />
-            <element signature="e#6536#6847#0" expanded="true" />
-            <element signature="e#6697#6764#0" expanded="true" />
-            <element signature="e#6846#6847#0" expanded="true" />
-            <element signature="e#7135#7194#0" expanded="true" />
-            <element signature="e#8149#8219#0" expanded="true" />
-            <element signature="e#8752#8796#0" expanded="true" />
-            <element signature="e#9362#9406#0" expanded="true" />
-            <element signature="e#9598#9786#0" expanded="true" />
-            <element signature="e#9708#9752#0" expanded="true" />
-            <element signature="e#9785#9786#0" expanded="true" />
-            <element signature="e#9991#10035#0" expanded="true" />
-            <element signature="e#10617#10634#0" expanded="true" />
-            <element signature="e#10708#10741#0" expanded="true" />
-            <element signature="e#11398#11415#0" expanded="true" />
-            <element signature="e#11489#11522#0" expanded="true" />
-            <element signature="e#11803#11836#0" expanded="true" />
-            <element signature="e#12149#12181#0" expanded="true" />
+            <element signature="e#3811#3828#0" expanded="true" />
+            <element signature="e#7013#7324#0" expanded="true" />
+            <element signature="e#7174#7241#0" expanded="true" />
+            <element signature="e#7323#7324#0" expanded="true" />
+            <element signature="e#7612#7671#0" expanded="true" />
+            <element signature="e#8626#8696#0" expanded="true" />
+            <element signature="e#9229#9273#0" expanded="true" />
+            <element signature="e#9839#9883#0" expanded="true" />
+            <element signature="e#10075#10263#0" expanded="true" />
+            <element signature="e#10185#10229#0" expanded="true" />
+            <element signature="e#10262#10263#0" expanded="true" />
+            <element signature="e#10468#10512#0" expanded="true" />
+            <element signature="e#11094#11111#0" expanded="true" />
+            <element signature="e#11185#11218#0" expanded="true" />
+            <element signature="e#11875#11892#0" expanded="true" />
+            <element signature="e#11966#11999#0" expanded="true" />
+            <element signature="e#12280#12313#0" expanded="true" />
+            <element signature="e#12626#12658#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3110,24 +2973,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3334#3351#0" expanded="true" />
-            <element signature="e#6536#6847#0" expanded="true" />
-            <element signature="e#6697#6764#0" expanded="true" />
-            <element signature="e#6846#6847#0" expanded="true" />
-            <element signature="e#7135#7194#0" expanded="true" />
-            <element signature="e#8149#8219#0" expanded="true" />
-            <element signature="e#8752#8796#0" expanded="true" />
-            <element signature="e#9362#9406#0" expanded="true" />
-            <element signature="e#9598#9786#0" expanded="true" />
-            <element signature="e#9708#9752#0" expanded="true" />
-            <element signature="e#9785#9786#0" expanded="true" />
-            <element signature="e#9991#10035#0" expanded="true" />
-            <element signature="e#10617#10634#0" expanded="true" />
-            <element signature="e#10708#10741#0" expanded="true" />
-            <element signature="e#11398#11415#0" expanded="true" />
-            <element signature="e#11489#11522#0" expanded="true" />
-            <element signature="e#11803#11836#0" expanded="true" />
-            <element signature="e#12149#12181#0" expanded="true" />
+            <element signature="e#3811#3828#0" expanded="true" />
+            <element signature="e#7013#7324#0" expanded="true" />
+            <element signature="e#7174#7241#0" expanded="true" />
+            <element signature="e#7323#7324#0" expanded="true" />
+            <element signature="e#7612#7671#0" expanded="true" />
+            <element signature="e#8626#8696#0" expanded="true" />
+            <element signature="e#9229#9273#0" expanded="true" />
+            <element signature="e#9839#9883#0" expanded="true" />
+            <element signature="e#10075#10263#0" expanded="true" />
+            <element signature="e#10185#10229#0" expanded="true" />
+            <element signature="e#10262#10263#0" expanded="true" />
+            <element signature="e#10468#10512#0" expanded="true" />
+            <element signature="e#11094#11111#0" expanded="true" />
+            <element signature="e#11185#11218#0" expanded="true" />
+            <element signature="e#11875#11892#0" expanded="true" />
+            <element signature="e#11966#11999#0" expanded="true" />
+            <element signature="e#12280#12313#0" expanded="true" />
+            <element signature="e#12626#12658#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3307,33 +3170,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1984334">
-          <caret line="374" column="56" selection-start-line="374" selection-start-column="56" selection-end-line="374" selection-end-column="56" />
-          <folding>
-            <element signature="e#3334#3351#0" expanded="true" />
-            <element signature="e#6536#6847#0" expanded="true" />
-            <element signature="e#6697#6764#0" expanded="true" />
-            <element signature="e#6846#6847#0" expanded="true" />
-            <element signature="e#7135#7194#0" expanded="true" />
-            <element signature="e#8149#8219#0" expanded="true" />
-            <element signature="e#8752#8796#0" expanded="true" />
-            <element signature="e#9362#9406#0" expanded="true" />
-            <element signature="e#9598#9786#0" expanded="true" />
-            <element signature="e#9708#9752#0" expanded="true" />
-            <element signature="e#9785#9786#0" expanded="true" />
-            <element signature="e#9991#10035#0" expanded="true" />
-            <element signature="e#10617#10634#0" expanded="true" />
-            <element signature="e#10708#10741#0" expanded="true" />
-            <element signature="e#11398#11415#0" expanded="true" />
-            <element signature="e#11489#11522#0" expanded="true" />
-            <element signature="e#11803#11836#0" expanded="true" />
-            <element signature="e#12149#12181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Checkups.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46475196">
@@ -3410,21 +3246,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/login.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64329267">
-          <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
-          <folding>
-            <element signature="e#1683#1702#0" expanded="true" />
-            <element signature="e#2556#2576#0" expanded="true" />
-            <element signature="e#3229#3248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -3491,13 +3312,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Language.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28981724">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="323" column="29" selection-start-line="323" selection-start-column="23" selection-end-line="323" selection-end-column="29" />
+          <folding>
+            <element signature="e#2744#2775#0" expanded="true" />
+            <element signature="e#2777#2809#0" expanded="true" />
+            <element signature="e#4123#4180#0" expanded="true" />
+            <element signature="e#5360#5418#0" expanded="true" />
+            <element signature="e#5478#5531#0" expanded="true" />
+            <element signature="e#9342#9399#0" expanded="true" />
+            <element signature="e#9985#10051#0" expanded="true" />
+            <element signature="e#11843#11904#0" expanded="true" />
+            <element signature="e#12163#12225#0" expanded="true" />
+            <element signature="e#12359#12420#0" expanded="true" />
+            <element signature="e#14576#14593#0" expanded="true" />
+            <element signature="e#14623#14680#0" expanded="true" />
+            <element signature="e#18025#18082#0" expanded="true" />
+            <element signature="e#18303#18345#0" expanded="true" />
+            <element signature="e#18456#18500#0" expanded="true" />
+            <element signature="e#19489#19526#0" expanded="true" />
+            <element signature="e#21067#21103#0" expanded="true" />
+            <element signature="e#22260#22277#0" expanded="true" />
+            <element signature="e#22290#22327#0" expanded="true" />
+            <element signature="e#22364#22392#0" expanded="true" />
+            <element signature="e#22450#22477#0" expanded="true" />
+            <element signature="e#23141#23184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/login.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.290909">
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/debug/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6666667">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#308#334#0" expanded="true" />
-            <element signature="e#448#475#0" expanded="true" />
+            <element signature="e#243#269#0" expanded="true" />
+            <element signature="e#527#552#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3507,64 +3386,48 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Woyalla.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33030304">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="59" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.48825064">
+          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="265" column="7" selection-start-line="264" selection-start-column="0" selection-end-line="286" selection-end-column="5" />
-          <folding>
-            <element signature="e#2635#2666#0" expanded="true" />
-            <element signature="e#2668#2700#0" expanded="true" />
-            <element signature="e#4014#4071#0" expanded="true" />
-            <element signature="e#5251#5309#0" expanded="true" />
-            <element signature="e#5369#5422#0" expanded="true" />
-            <element signature="e#9233#9290#0" expanded="true" />
-            <element signature="e#9876#9942#0" expanded="true" />
-            <element signature="e#11734#11795#0" expanded="true" />
-            <element signature="e#12054#12116#0" expanded="true" />
-            <element signature="e#12250#12311#0" expanded="true" />
-            <element signature="e#15542#15599#0" expanded="true" />
-            <element signature="e#15820#15862#0" expanded="true" />
-            <element signature="e#15973#16017#0" expanded="true" />
-            <element signature="e#17006#17043#0" expanded="true" />
-            <element signature="e#18584#18620#0" expanded="true" />
-            <element signature="e#19777#19794#0" expanded="true" />
-            <element signature="e#19807#19844#0" expanded="true" />
-            <element signature="e#19881#19909#0" expanded="true" />
-            <element signature="e#19967#19994#0" expanded="true" />
-            <element signature="e#20658#20701#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Splash.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Language.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/brainup/woyalla/Woyalla.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48825064">
-          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-          <folding />
+        <state vertical-scroll-proportion="12.605744">
+          <caret line="431" column="8" selection-start-line="431" selection-start-column="8" selection-end-line="431" selection-end-column="8" />
+          <folding>
+            <element signature="e#3000#3150#0" expanded="true" />
+            <element signature="e#3149#3150#0" expanded="true" />
+            <element signature="e#3811#3828#0" expanded="true" />
+            <element signature="e#7174#7241#0" expanded="true" />
+            <element signature="e#7612#7671#0" expanded="true" />
+            <element signature="e#8626#8696#0" expanded="true" />
+            <element signature="e#9229#9273#0" expanded="true" />
+            <element signature="e#9839#9883#0" expanded="true" />
+            <element signature="e#10185#10229#0" expanded="true" />
+            <element signature="e#10468#10512#0" expanded="true" />
+            <element signature="e#11094#11111#0" expanded="true" />
+            <element signature="e#11185#11218#0" expanded="true" />
+            <element signature="e#11875#11892#0" expanded="true" />
+            <element signature="e#11966#11999#0" expanded="true" />
+            <element signature="e#12280#12313#0" expanded="true" />
+            <element signature="e#12626#12658#0" expanded="true" />
+            <element signature="e#14437#14906#0" expanded="true" />
+            <element signature="e#14905#14906#0" expanded="true" />
+            <element signature="e#15054#15071#0" expanded="true" />
+            <element signature="e#15101#15158#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

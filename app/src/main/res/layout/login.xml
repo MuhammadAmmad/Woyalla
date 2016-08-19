@@ -28,7 +28,15 @@
     android:src="@drawable/logo"
     />
 
-
+    <Button
+        android:id="@+id/login_btn_change_lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        android:padding="8dp"
+        android:text="@string/nav_lang"
+        android:textColor="@color/white" />
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

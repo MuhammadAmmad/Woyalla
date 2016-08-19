@@ -49,6 +49,8 @@
     <string name="nav_lang">Change Language</string>
     <string name="nav_communicate">Communicate</string>
 
+    <string name="dialog_select_language">Select Language / ቋንቋ ምረጥ</string>
+
     <string name="toast_register_ok_new">Your Account has been successfully created.</string>
     <string name="toast_register_ok_update">We found an account with this phone number. We have updated your info with your new data</string>
     <string name="toast_calling_server">Calling the server </string>

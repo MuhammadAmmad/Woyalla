@@ -6,6 +6,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
@@ -28,6 +30,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.IOException;
+import java.util.Locale;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -47,7 +50,7 @@ public class Login extends AppCompatActivity {
 	private ProgressDialog pDialog;
 	private Context myContext;
 	private EditText ed_phoneNumber, ed_name;
-	private Button bt_login;
+	private Button bt_login, bt_change_lang;
 	private TextInputLayout inputLayoutPhone, inputLayoutName;
     private User Main_User;
     private ProgressDialog myDialog;
@@ -77,7 +80,7 @@ public class Login extends AppCompatActivity {
         ed_phoneNumber = (EditText) findViewById(R.id.login_phone);
         ed_name = (EditText) findViewById(R.id.login_name);
 		bt_login = (Button) findViewById(R.id.btnLogin);
-
+        bt_change_lang = (Button)findViewById(R.id.login_btn_change_lang);
         inputLayoutPhone = (TextInputLayout) findViewById(R.id.login_txtinput_phone);
         inputLayoutName = (TextInputLayout) findViewById(R.id.login_inputtxt_name);
 
@@ -91,10 +94,19 @@ public class Login extends AppCompatActivity {
         client = new OkHttpClient();   //initialize the okHttpClient to send http requests
         mediaType = MediaType.parse("application/x-www-form-urlencoded");
 
-
+        handleChangeLanguage();
     }
 
-	public void setButtonActions(){
+    private void handleChangeLanguage() {
+        bt_change_lang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectLanguage();
+            }
+        });
+    }
+
+    public void setButtonActions(){
 
 		/*
 				Button login works
@@ -369,6 +381,61 @@ public class Login extends AppCompatActivity {
     }
 
 
+    private void setLanguage(String lang) {
+        SharedPreferences settings = getSharedPreferences(Woyalla.PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        Locale locale;
+        Configuration configuration;
+        switch (lang){
+            case "am":
+                editor.putString("lang","am");
+                editor.commit();
+                locale = new Locale("am");
+                Locale.setDefault(locale);
+                configuration = new Configuration();
+                configuration.locale = locale;
+                getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+                break;
+            case "en":
+                editor.putString("lang","en");
+                editor.commit();
+                locale = new Locale("en");
+                Locale.setDefault(locale);
+                configuration = new Configuration();
+                configuration.locale = locale;
+                getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+                break;
+        }
+        this.finish();
+        startActivity( new Intent(Login.this,Login.class));
+    }
+
+    /**
+     * Select language dialog
+     * */
+    public void selectLanguage() {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case DialogInterface.BUTTON_POSITIVE:
+                        setLanguage("en");
+                        break;
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        setLanguage("am");
+                        break;
+                }
+            }
+        };
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(Login.this);
+        builder.setTitle(R.string.app_name)
+                .setMessage(getResources().getString(R.string.dialog_select_language))
+                .setPositiveButton("English", dialogClickListener)
+                .setNegativeButton("አማርኛ",dialogClickListener).show();
+    }
+
+
+
     /*
     * Text watcher class which checks the values in the text fields
     * */
@@ -397,4 +464,6 @@ public class Login extends AppCompatActivity {
             }
         }
     }
+
+
 }

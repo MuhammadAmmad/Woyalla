@@ -6,7 +6,9 @@ import android.content.ActivityNotFoundException;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,6 +45,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -286,6 +289,64 @@ public class MainActivity extends AppCompatActivity
             }
     }
 
+
+
+    private void setLanguage(String lang) {
+        SharedPreferences settings = getSharedPreferences(Woyalla.PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        Locale locale;
+        Configuration configuration;
+        switch (lang){
+            case "am":
+                editor.putString("lang","am");
+                editor.commit();
+                locale = new Locale("am");
+                Locale.setDefault(locale);
+                configuration = new Configuration();
+                configuration.locale = locale;
+                getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+                break;
+            case "en":
+                editor.putString("lang","en");
+                editor.commit();
+                locale = new Locale("en");
+                Locale.setDefault(locale);
+                configuration = new Configuration();
+                configuration.locale = locale;
+                getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+                break;
+        }
+        this.finish();
+        startActivity(new Intent(MainActivity.this,MainActivity.class));
+    }
+
+    /**
+     * Select language dialog
+     * */
+    public void selectLanguage() {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case DialogInterface.BUTTON_POSITIVE:
+                        setLanguage("en");
+                        break;
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        setLanguage("am");
+                        break;
+                }
+            }
+        };
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.app_name)
+                .setMessage(getResources().getString(R.string.dialog_select_language))
+                .setPositiveButton("English", dialogClickListener)
+                .setNegativeButton("አማርኛ",dialogClickListener).show();
+    }
+
+
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -337,6 +398,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_about) {
             intent = new Intent(this,About.class);
             startActivity(intent);
+        } else if (id == R.id.nav_lang) {
+            selectLanguage();
         } else if (id == R.id.nav_logout) {
             logOut();
         } else if (id == R.id.nav_share) {

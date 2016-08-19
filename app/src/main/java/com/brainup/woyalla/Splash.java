@@ -13,12 +13,16 @@ import com.brainup.woyalla.Database.Database;
 
 public class Splash extends Activity {
 
+	Language language;
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
+
+		language = new Language(this);
+		language.init();
 
 		Thread splash = new Thread(){
 			@Override
