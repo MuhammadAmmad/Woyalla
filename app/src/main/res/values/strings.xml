@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Woyalla</string>
-    <string name="title_activity_maps">Woyala</string>
+    <string name="app_name">Weyala</string>
+    <string name="title_activity_maps">Weyala</string>
     <string name="call_center_number">994</string>
 
 
@@ -22,5 +22,8 @@
     <string name="err_msg_name">Enter your full name here</string>
     <string name="err_msg_phone">Enter a valid phone number</string>
     <string name="err_msg_comment">Enter comment properly</string>
+
+
+    <string name="comment_write">Write your Comment here</string>
 
 </resources>

@@ -34,6 +34,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -184,10 +185,16 @@ public class MainActivity extends AppCompatActivity
                      * */
                         if(myObject.get("status").toString().startsWith("ok") ){
 
+                            boolean isDataExist = false;
+                            try {
+                                isDataExist = myObject.get("data").equals(null) ? false : true;
+                            } catch (Exception e) {
+                                isDataExist = false;
+                            }
                             /**
                              * If the driver status is on service
                              */
-                            if(myObject.get("data")!=null) {
+                            if(isDataExist) {
                                 JSONObject json_response = myObject.getJSONObject("data");
                                 JSONArray json_drivers = json_response.getJSONArray("nearbyDrivers");
                                 addDriver(json_drivers);
@@ -422,7 +429,7 @@ public class MainActivity extends AppCompatActivity
      * then view it on the map
      */
     private void moveMapToMyLocation() {
-        //Creating a LatLng Object to store Coordinates
+/*        //Creating a LatLng Object to store Coordinates
         if(gps.canGetLocation()) {
             LatLng latLng = new LatLng(gps.getLatitude(), gps.getLongitude());
 
@@ -441,6 +448,29 @@ public class MainActivity extends AppCompatActivity
         }
         else {
             gps.showSettingsAlert();
+        }*/
+
+        //Creating a LatLng Object to store Coordinates
+        gps = new GPSTracker(this);
+        double latitude = gps.getLatitude();
+        double longitude = gps.getLongitude();
+
+        if(!mMap.equals(null)) {
+            mMap.clear();
+            LatLng latLng = new LatLng(latitude, longitude);
+
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(15).build();
+            //Adding marker to map
+            mMap.addMarker(new MarkerOptions()
+                    .position(latLng) //setting position
+                    .draggable(true) //Making the marker draggable
+                    .title("My Location")); //Adding a title
+
+            //Moving the camera
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+            //Animating the camera
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         }
     }
 
@@ -473,7 +503,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         moveMapToMyLocation();
     }
 

@@ -25,7 +25,7 @@
 
             <ImageView
                 android:id="@+id/comment_image"
-                android:src="@drawable/splashlogo_xhdpi"
+                android:src="@drawable/logo_comment"
                 android:layout_width="match_parent"
                 android:layout_height="320dp"
                 android:scaleType="centerCrop"
@@ -123,8 +123,7 @@
                                 android:textSize="16dp"
                                 android:lines="7"
                                 android:maxLines="13"
-
-                                android:text="John 3:16 \n For God so loved the world that He gave his only Son so whoever believes in Him should not perish but have eternal life."/>
+                                android:hint="@string/comment_write"/>
                             </android.support.design.widget.TextInputLayout>
 
                         </LinearLayout>
