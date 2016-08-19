@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
             return false;
         }
         else if(!Checkups.isNetworkAvailable(MainActivity.this)){
-            Checkups.showDialog("No connection found!\nPlease open cellular data or connect to wifi for the app to work properly.",MainActivity.this);
+            Checkups.showDialog(MainActivity.this.getString(R.string.no_connection_found),MainActivity.this);
             return false;
         }
         else if(!gps.canGetLocation()){
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void startCall() {
-        Toast.makeText(MainActivity.this, "Calling the server ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, MainActivity.this.getString(R.string.toast_calling_server), Toast.LENGTH_SHORT).show();
 
         String phoneNumber = getResources().getString(R.string.call_center_number);
         Intent intent = new Intent(Intent.ACTION_CALL);
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity
                                 MainActivity.this.runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Checkups.showDialog("Your location is sent.\nNear bye drivers also added.",MainActivity.this);
+                                        Checkups.showDialog(MainActivity.this.getString(R.string.toast_location_sent),MainActivity.this);
                                     }
                                 });
 
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity
                             MainActivity.this.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Checkups.showDialog("An error occurred while sending your location to the server. ",MainActivity.this);
+                                    Checkups.showDialog(MainActivity.this.getString(R.string.toast_error_sending_location),MainActivity.this);
                                 }
                             });
                         }
@@ -272,15 +272,15 @@ public class MainActivity extends AppCompatActivity
                         startCall();
                     }
                     else{
-                        Toast.makeText(MainActivity.this,"Permission denied! Please Grant Permission",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this,MainActivity.this.getString(R.string.toast_permission_denied),Toast.LENGTH_LONG).show();
                     }
                     break;
                 case 2:
                     if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                        Toast.makeText(MainActivity.this,"Permission granted! Thank you!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this,MainActivity.this.getString(R.string.toast_permission_granted),Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Toast.makeText(MainActivity.this,"Permission denied! Please Grant Permission",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this,MainActivity.this.getString(R.string.toast_permission_denied),Toast.LENGTH_SHORT).show();
                         checkGPS();
                     }
             }
@@ -382,14 +382,14 @@ public class MainActivity extends AppCompatActivity
         if(drivers.size()>0){
             mMap.clear();
             moveMapToMyLocation();
-            Toast.makeText(this,"Getting list of near bye cars. ",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,MainActivity.this.getString(R.string.toast_near_bye_card),Toast.LENGTH_LONG).show();
             for(int i = 0; i <drivers.size(); i++){
                 LatLng latLng = new LatLng(drivers.get(i).getLatitude(),drivers.get(i).getLongitude());
-                createMarkers(latLng,"Taxi "+i,"Distance: "+drivers.get(i).getDistance());
+                createMarkers(latLng,MainActivity.this.getString(R.string.taxi)+ i," : "+drivers.get(i).getDistance());
             }
         }
         else{
-            Toast.makeText(this,"Please make a call first",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,this.getString(R.string.toast_make_call_fir),Toast.LENGTH_LONG).show();
         }
 
     }
@@ -418,10 +418,7 @@ public class MainActivity extends AppCompatActivity
         Woyalla.myDatabase.Delete_All(Database.Table_NEARBYE_DRIVER);
         mMap.clear();
         moveMapToMyLocation();
-        Log.i("myLocation","Latitude "+ gps.getLatitude() + "\n Longitude"+gps.getLongitude());
-
-        Toast.makeText(MainActivity.this,"Location is reloaded \nPrevious near bye drivers has been removed also." +
-                " \nThe map is also set to your current location.",Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this,this.getString(R.string.toast_reload),Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -464,7 +461,7 @@ public class MainActivity extends AppCompatActivity
             mMap.addMarker(new MarkerOptions()
                     .position(latLng) //setting position
                     .draggable(true) //Making the marker draggable
-                    .title("My Location")); //Adding a title
+                    .title(this.getString(R.string.my_location))); //Adding a title
 
             //Moving the camera
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
@@ -492,11 +489,10 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         };
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.app_name).setMessage("Are you sure you want to Logout?")
-                .setPositiveButton("Yes", dialogClickListener)
-                .setNegativeButton("No", dialogClickListener)
+        builder.setTitle(R.string.app_name).setMessage(this.getString(R.string.logout_title))
+                .setPositiveButton(this.getString(R.string.yes), dialogClickListener)
+                .setNegativeButton(this.getString(R.string.no), dialogClickListener)
                 .show();
     }
 

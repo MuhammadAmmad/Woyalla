@@ -115,7 +115,7 @@ public class Comment extends AppCompatActivity {
         //initialize the progress dialog
         myDialog = new ProgressDialog(this);
         myDialog.setTitle(R.string.app_name);
-        myDialog.setMessage("Sending the comment ...");
+        myDialog.setMessage(Comment.this.getResources().getString(R.string.comment_sending));
         myDialog.show();
 
         //start a thread different from the main thread to handle http requests
@@ -173,7 +173,7 @@ public class Comment extends AppCompatActivity {
                 Comment.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(Comment.this,"Your comment has been sent! Thank you!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(Comment.this,Comment.this.getString(R.string.toast_comment_ok),Toast.LENGTH_LONG).show();
                     }
                 });
                 this.finish();
@@ -187,7 +187,7 @@ public class Comment extends AppCompatActivity {
                 Comment.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(Comment.this,"Your comment has been sent! Thank you!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(Comment.this,Comment.this.getString(R.string.toast_comment_error),Toast.LENGTH_LONG).show();
                     }
                 });
 

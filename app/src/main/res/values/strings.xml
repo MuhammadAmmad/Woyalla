@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Weyala</string>
     <string name="title_activity_maps">Weyala</string>
-    <string name="call_center_number">994</string>
+    <string name="call_center_number" translatable="false">994</string>
 
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
 
     <string name="action_settings">Settings</string>
@@ -17,13 +17,55 @@
     <string name="hint_name">Enter Name</string>
     <string name="hint_phone">Enter Phone Number (09xxxxxx)</string>
     <string name="call">Call to get Taxi</string>
+    <string name="taxi">Taxi</string>
     <string name="comment">Send Comment</string>
+    <string name="comment_your">Your Comment</string>
+    <string name="comment_write">Write your Comment here</string>
+    <string name="comment_sending">Sending the comment ...</string>
+    <string name="my_location">My Location</string>
+    <string name="no">No</string>
+    <string name="yes">Yes </string>
+
+    <string name="about">Are you the car owner. asethalksjdg asdkgj;las alsdkgj alskdjg ;alsdkjg al;skdjg ;asdg </string>
+
+    <string name="logout_title">Are you sure you want to Logout?</string>
 
     <string name="err_msg_name">Enter your full name here</string>
     <string name="err_msg_phone">Enter a valid phone number</string>
     <string name="err_msg_comment">Enter comment properly</string>
 
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_general">An error occurred. Please try again.</string>
+    <string name="error_connection">Connection error. Please try again.</string>
 
-    <string name="comment_write">Write your Comment here</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_about">About</string>
+    <string name="nav_logout">Logout</string>
+    <string name="nav_share">Share App</string>
+    <string name="nav_rate">Rate App</string>
+    <string name="nav_comment">Comment App</string>
+    <string name="nav_exit">Exit</string>
+    <string name="nav_lang">Change Language</string>
+    <string name="nav_communicate">Communicate</string>
 
+    <string name="toast_register_ok_new">Your Account has been successfully created.</string>
+    <string name="toast_register_ok_update">We found an account with this phone number. We have updated your info with your new data</string>
+    <string name="toast_calling_server">Calling the server </string>
+    <string name="toast_comment_ok">Your comment has been sent! Thank you!</string>
+    <string name="toast_comment_error">Sorry something went wrong. \nYour comment is not sent. Please try again.</string>
+    <string name="toast_location_sent">Your location is sent. Near bye drivers also added. </string>
+    <string name="toast_error_sending_location">An error occurred while sending your location to the server. </string>
+    <string name="toast_permission_denied">Permission denied! Please Grant Permission. </string>
+    <string name="toast_permission_granted">Permission granted! Thank you! </string>
+    <string name="toast_near_bye_card">Getting list of near bye cars. </string>
+    <string name="toast_make_call_fir">Please make a call first. </string>
+    <string name="toast_reload">Data is reloaded. \nPrevious driver info has been removed. \nThe map is set to your current location.</string>
+
+
+    <string name="no_connection_found">No connection found! Please open cellular data or connect to wifi for the app to work properly.</string>
+    <string name="no_gps_found">GPS is not enabled. Do you want to go to settings menu?</string>
+
+    <string name="notification_title">New list of near bye Drivers</string>
+    <string name="notification_content">Based on your request, we have sent you a list of near bye drivers</string>
 </resources>

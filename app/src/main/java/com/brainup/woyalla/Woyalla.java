@@ -11,6 +11,7 @@ public class Woyalla extends Application {
 
    // public static final String API_URL  = "http://192.168.2.100/api.weyala.net/";
     public static final String API_URL  = "http://weyala.net/api/";
+    public static final String PREFS_NAME = "weyala_language";
 
     public static Database myDatabase;
 

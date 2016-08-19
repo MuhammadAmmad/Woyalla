@@ -101,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
                         android:textSize="17dp"
-                        android:text="Comment"/>
+                        android:text="@string/comment_your"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"

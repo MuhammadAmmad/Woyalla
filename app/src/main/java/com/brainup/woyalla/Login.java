@@ -186,11 +186,18 @@ public class Login extends AppCompatActivity {
              *
              * */
             if(myObject.get("status").toString().startsWith("ok") ){
+
+                boolean isDataExist = false;
+                try {
+                    isDataExist = myObject.get("data").equals(null) ? false : true;
+                } catch (Exception e) {
+                    isDataExist = false;
+                }
                 /**
                  * If we get OK response & we get a data object with in the response json
                  * This is a new user
                  * */
-                if(myObject.get("data")!=null) {
+                if(isDataExist) {
                     Log.i("resposeJsonStatus", myObject.get("status").toString());
                     Log.i("resposeJsonMessage", myObject.get("message").toString());
 
@@ -210,7 +217,7 @@ public class Login extends AppCompatActivity {
                         Login.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(Login.this,"Your Account has been successfully created",Toast.LENGTH_LONG).show();
+                                Toast.makeText(Login.this,Login.this.getResources().getString(R.string.toast_register_ok_new),Toast.LENGTH_LONG).show();
                             }
                         });
                         Intent intent = new Intent(this,MainActivity.class);
@@ -219,7 +226,7 @@ public class Login extends AppCompatActivity {
                     }
                     else{
                         myDialog.dismiss();
-                        ShowDialog("An error occurred. Please try again.");
+                        ShowDialog(Login.this.getResources().getString(R.string.error_general));
                     }
                 }
 
@@ -227,7 +234,7 @@ public class Login extends AppCompatActivity {
                  * If we get OK response & we don't get a data object with in the response json
                  * This is an existing user but the account is updated with new info
                  * */
-                else if(myObject.get("data")==null){
+                else{
 
                     ContentValues cv = new ContentValues();
                     cv.put(Database.USER_FIELDS[0], Main_User.getName());
@@ -241,7 +248,7 @@ public class Login extends AppCompatActivity {
                         Login.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(Login.this,"We found an account with this phone number. \nWe have updated your info with your new data.",Toast.LENGTH_LONG).show();
+                                Toast.makeText(Login.this,Login.this.getResources().getString(R.string.toast_register_ok_update),Toast.LENGTH_LONG).show();
                             }
                         });
                         Intent intent = new Intent(this, MainActivity.class);
@@ -253,7 +260,7 @@ public class Login extends AppCompatActivity {
                         Login.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                ShowDialog("An error occurred! Please try again later");
+                                ShowDialog(Login.this.getString(R.string.error_general));
                             }
                         });
                     }
@@ -271,7 +278,7 @@ public class Login extends AppCompatActivity {
                 Login.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        ShowDialog(errorMessage);
+                        ShowDialog(Login.this.getString(R.string.error_general));
                     }
                 });
             }
@@ -282,7 +289,7 @@ public class Login extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    ShowDialog("An error occurred! Please try again");
+                    ShowDialog(Login.this.getString(R.string.error_general));
                 }
             });
         } catch(JSONException e){
@@ -290,7 +297,7 @@ public class Login extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    ShowDialog("An error occurred! Please try again!");
+                    ShowDialog(Login.this.getString(R.string.error_general));
                 }
             });
         }
@@ -310,7 +317,7 @@ public class Login extends AppCompatActivity {
         builder = new AlertDialog.Builder(myContext);
         builder.setTitle(R.string.app_name)
                 .setMessage(message)
-                .setPositiveButton("Ok", dialogClickListener).show();
+                .setPositiveButton(Login.this.getString(R.string.ok), dialogClickListener).show();
     }
 
     public void ShowErrorDialog(String message) {
@@ -329,12 +336,12 @@ public class Login extends AppCompatActivity {
         builder = new AlertDialog.Builder(myContext);
         builder.setTitle(R.string.app_name)
                 .setMessage(message)
-                .setPositiveButton("Ok", dialogClickListener).show();
+                .setPositiveButton(Login.this.getString(R.string.ok), dialogClickListener).show();
     }
 
     private boolean validatePhone() {
         if (ed_phoneNumber.getText().toString().trim().isEmpty() || ed_phoneNumber.getText().toString().length()>12 || ed_phoneNumber.getText().toString().length()<6) {
-            inputLayoutPhone.setError(getString(R.string.err_msg_phone));
+            ed_phoneNumber.setError(getString(R.string.err_msg_phone));
             requestFocus(ed_phoneNumber);
             return false;
         }
@@ -345,13 +352,12 @@ public class Login extends AppCompatActivity {
     }
     private boolean validateName() {
         if (ed_name.getText().toString().trim().isEmpty()) {
-            inputLayoutName.setError(getString(R.string.err_msg_name));
+            ed_name.setError(getString(R.string.err_msg_name));
             requestFocus(ed_name);
             return false;
         } else {
             inputLayoutName.setErrorEnabled(false);
         }
-
         return true;
     }
 

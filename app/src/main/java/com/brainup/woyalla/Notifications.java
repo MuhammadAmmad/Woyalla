@@ -28,9 +28,9 @@ public class Notifications {
         PendingIntent pi = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_ONE_SHOT);
         Uri uri = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.ringtone);
         Notification.Builder builder = new Notification.Builder(context)
-                .setContentTitle("New list of near bye Drivers")
+                .setContentTitle(context.getString(R.string.notification_title))
                 .setContentIntent(pi)
-                .setContentText("Based on your request, we have sent you a list of near bye drivers")
+                .setContentText(context.getString(R.string.notification_content))
                 .setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)
                 .setWhen(System.currentTimeMillis())
