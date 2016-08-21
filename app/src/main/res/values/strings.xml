@@ -12,7 +12,8 @@
     <string name="nav_sub_title">Get Taxi Easily</string>
     <string name="menu_my_location">Update My Location</string>
     <string name="change_map_type">Change Map Type</string>
-    <string name="menu_show_drivers">Show Drivers</string>
+    <string name="menu_show_drivers">Show Taxi</string>
+    <string name="menu_show_coming_drivers">Show Coming Taxi</string>
     <string name="btn_login">Login</string>
     <string name="hint_name">Enter Name</string>
     <string name="hint_phone">Enter Phone Number (09xxxxxx)</string>
@@ -50,9 +51,13 @@
     <string name="nav_communicate">Communicate</string>
 
     <string name="dialog_select_language">Select Language / ቋንቋ ምረጥ</string>
+    <string name="dialog_coming_taxi">Getting Location</string>
+    <string name="logging_in">Logging in ...</string>
 
     <string name="toast_register_ok_new">Your Account has been successfully created.</string>
     <string name="toast_register_ok_update">We found an account with this phone number. We have updated your info with your new data</string>
+    <string name="toast_coming_taxi_ok">Showing you the coming taxi location </string>
+    <string name="toast_coming_taxi_error">You do not have a coming client yet. Please make a call first. </string>
     <string name="toast_calling_server">Calling the server </string>
     <string name="toast_comment_ok">Your comment has been sent! Thank you!</string>
     <string name="toast_comment_error">Sorry something went wrong. \nYour comment is not sent. Please try again.</string>
@@ -61,7 +66,7 @@
     <string name="toast_permission_denied">Permission denied! Please Grant Permission. </string>
     <string name="toast_permission_granted">Permission granted! Thank you! </string>
     <string name="toast_near_bye_card">Getting list of near bye cars. </string>
-    <string name="toast_make_call_fir">Please make a call first. </string>
+    <string name="toast_make_call_first">Please make a call first. </string>
     <string name="toast_reload">Data is reloaded. \nPrevious driver info has been removed. \nThe map is set to your current location.</string>
 
 

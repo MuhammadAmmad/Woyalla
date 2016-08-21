@@ -2,6 +2,7 @@ package com.brainup.woyalla;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -41,9 +42,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity
     SupportMapFragment mapFragment;     //map fragment
     Button call;                        //call button declaration
     GPSTracker gps;
-
+    ProgressDialog myDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +91,9 @@ public class MainActivity extends AppCompatActivity
 
         //call button initialization
         call = (Button) findViewById(R.id.call);
+
+        //initialize the progress dialog
+        myDialog = new ProgressDialog(this);
 
         checkGPS();
         handleCallButton();
@@ -375,6 +381,10 @@ public class MainActivity extends AppCompatActivity
             reload();
             return true;
         }
+        if (id == R.id.menu_show_coming_drivers) {
+            handleComingTaxi();
+            return true;
+        }
         if (id == R.id.menu_show_drivers) {
             showNearByeCars();
             return true;
@@ -386,6 +396,8 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -437,6 +449,136 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+
+    private void handleComingTaxi() {
+
+        myDialog.setTitle(R.string.app_name);
+        myDialog.setMessage(this.getString(R.string.dialog_coming_taxi));
+        myDialog.setCancelable(false);
+        myDialog.show();
+
+
+        Thread login = new Thread(){
+            @Override
+            public void run() {
+                try {
+                    sleep( 2000);
+                } catch(InterruptedException e){
+                } finally {
+                    showComingTaxi();   //this method will handle the request
+                }
+            }
+        };
+
+        login.start();
+
+    }
+
+    public void showComingTaxi(){
+         if(!Checkups.isNetworkAvailable(this)) {
+             runOnUiThread(new Runnable() {
+                 @Override
+                 public void run() {
+                     myDialog.dismiss();
+                     ShowDialog(MainActivity.this.getString(R.string.no_connection_found));
+
+                 }
+             });
+             return;
+         }
+        String phone = Woyalla.myDatabase.get_Value_At_Top(Database.Table_USER, Database.USER_FIELDS[1]);
+
+        OkHttpClient client = new OkHttpClient();    //this object will handle http requests
+
+        Request request  = new Request.Builder()
+                .url(Woyalla.API_URL + "clients/assigned/"+phone)
+                .get()
+                .addHeader("authorization", "Basic dGhlVXNlcm5hbWU6dGhlUGFzc3dvcmQ=")
+                .addHeader("cache-control", "no-cache")
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .build();
+        try {
+            //make the http post request and get the server response
+            Response response = client.newCall(request).execute();
+            String responseBody = response.body().string().toString();
+            Log.i("responseFull", responseBody);
+
+            //get the json response object
+            JSONObject myObject = (JSONObject) new JSONTokener(responseBody).nextValue();
+
+            /**
+             * If we get OK response
+             *
+             * */
+            if(myObject.get("status").toString().startsWith("ok") ){
+
+                boolean isDataExist = false;
+                try {
+                    isDataExist = myObject.get("data").equals(null) ? false : true;
+                } catch (Exception e) {
+                    isDataExist = false;
+                }
+                /**
+                 * If we get OK response & we get a data object with in the response json
+                 * This is a new user
+                 * */
+                if(isDataExist) {
+                    JSONObject json_response = myObject.getJSONObject("data");
+                    final double gpsLatitude = Double.parseDouble(json_response.get("gpsLatitude").toString());
+                    final double gpsLongitude = Double.parseDouble(json_response.get("gpsLongitude").toString());
+
+
+
+                    MainActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mMap.clear();
+                            moveMapToMyLocation();
+                            LatLng latLng = new LatLng(gpsLatitude,gpsLongitude);
+                            createMarkers(latLng,MainActivity.this.getString(R.string.taxi),"");
+                            myDialog.dismiss();
+                            Toast.makeText(MainActivity.this,MainActivity.this.getResources().getString(R.string.toast_coming_taxi_ok),Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+                }
+
+            }
+            /**
+             * If we get error response
+             *
+             * */
+            else if(myObject.get("status").toString().startsWith("error") ){
+                final String errorMessage = myObject.get("description").toString();
+                myDialog.dismiss();
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ShowDialog(MainActivity.this.getString(R.string.toast_coming_taxi_error));
+                    }
+                });
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            myDialog.dismiss();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    ShowDialog(MainActivity.this.getString(R.string.error_general));
+                }
+            });
+        } catch(JSONException e){
+            myDialog.dismiss();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    ShowDialog(MainActivity.this.getString(R.string.error_general));
+                }
+            });
+        }
+    }
+
     /**
      * This method will get near bye taxi info from local database and points them on the map
      */
@@ -452,7 +594,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
         else{
-            Toast.makeText(this,this.getString(R.string.toast_make_call_fir),Toast.LENGTH_LONG).show();
+            Toast.makeText(this,this.getString(R.string.toast_make_call_first),Toast.LENGTH_LONG).show();
         }
 
     }
@@ -586,6 +728,24 @@ public class MainActivity extends AppCompatActivity
         } catch (ActivityNotFoundException e) {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=com.brainup.woyalla")));
         }
+    }
+
+    public void ShowDialog(String message) {
+        android.support.v7.app.AlertDialog.Builder builder;
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case DialogInterface.BUTTON_POSITIVE:
+                        // Yes button clicked
+                        break;
+                }
+            }
+        };
+        builder = new android.support.v7.app.AlertDialog.Builder(this);
+        builder.setTitle(R.string.app_name)
+                .setMessage(message)
+                .setPositiveButton(MainActivity.this.getString(R.string.ok), dialogClickListener).show();
     }
 
 }

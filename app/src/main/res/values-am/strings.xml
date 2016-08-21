@@ -43,7 +43,7 @@
     <string name="toast_calling_server">በመደወል ላይ ነው</string>
     <string name="toast_error_sending_location">አድራሻዎትን ወደ ሰርቨር መላክ አልተቻለም። እባኮትን እነደገና ይሞካሩ</string>
     <string name="toast_location_sent">አድራሻዎት ተልኳል። አቅራቢያዎ ያሉ ታክሲዎችም ተልኮሎታል።</string>
-    <string name="toast_make_call_fir">እባኮትን መጀመሪያ የስልክ ጥሪ ያድርጉ።</string>
+    <string name="toast_make_call_first">እባኮትን መጀመሪያ የስልክ ጥሪ ያድርጉ።</string>
     <string name="toast_near_bye_card">አቅራቢያዎ ያሉትን መኪናዎች እየተጫኑ ነው</string>
     <string name="toast_permission_denied">ፈቃድ ከልክለዋል። እባኮትን ፈቃድ ይስጡ።</string>
     <string name="toast_permission_granted">ፈቃድ ስለሰጡ እናመሰግናለን</string>
@@ -51,6 +51,13 @@
     <string name="toast_register_ok_update">ነባር አካውንቶ በአዲሱ ተተክቷል</string>
     <string name="toast_reload">በትክክል ታድሷል። የቀደመው ታክሲ መረጃ ጠፍቷል</string>
     <string name="yes">አዎ</string>
-    <string name="toast_comment_error">ይቅርታ ችግር ተፈጥሩዋል፡፡ አስተያየቶ አልተላከም ስለዚህ እነደገና ይላኩ።</string>
     <string name="toast_comment_ok">አስተያየቶ በትክክል ተልኳል</string>
+    <string name="menu_show_coming_drivers">የሚመጣ ታክሲ አሳይ</string>
+    <string name="logging_in">እየገባ ነው ...</string>
+    <string name="navigation_drawer_close" translatable="false"></string>
+    <string name="title_activity_maps"></string>
+    <string name="toast_coming_taxi_ok">መረጃው በትክክል መቷል። እባኮትን ካርታው ላይ ይመልከቱ።</string>
+    <string name="toast_coming_taxi_error">የሚመጣ ታክሲ ለጊዜው የሎትም። እባኮትን በቅድሚያ ይደውሉ።</string>
+    <string name="dialog_coming_taxi">አድራሻውን በማግኘት ላይ ነን</string>
+    <string name="toast_comment_error">ይቅርታ አስተያየቶን መላክ አልተቻለም። እባኮትን እንደገና ይሞክሩ።</string>
 </resources>

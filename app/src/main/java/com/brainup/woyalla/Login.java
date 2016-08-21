@@ -144,7 +144,7 @@ public class Login extends AppCompatActivity {
 
         myDialog = new ProgressDialog(this);
         myDialog.setTitle(R.string.app_name);
-        myDialog.setMessage("Logging in ....");
+        myDialog.setMessage(this.getString(R.string.logging_in));
         myDialog.setCancelable(false);
         myDialog.show();
 
