@@ -5,15 +5,14 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -35,7 +34,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -144,7 +142,7 @@ public class MainActivity extends AppCompatActivity
 
         String phoneNumber = getResources().getString(R.string.call_center_number);
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:" + phoneNumber));
+        intent.setData(Uri.parse("tel:"+phoneNumber));
         sendGPSLocation();
         startActivity(intent);
     }
@@ -526,6 +524,7 @@ public class MainActivity extends AppCompatActivity
                     JSONObject json_response = myObject.getJSONObject("data");
                     final double gpsLatitude = Double.parseDouble(json_response.get("gpsLatitude").toString());
                     final double gpsLongitude = Double.parseDouble(json_response.get("gpsLongitude").toString());
+                    final double driver_phone = Double.parseDouble(json_response.get("phoneNumber").toString());
 
 
 
@@ -535,7 +534,7 @@ public class MainActivity extends AppCompatActivity
                             mMap.clear();
                             moveMapToMyLocation();
                             LatLng latLng = new LatLng(gpsLatitude,gpsLongitude);
-                            createMarkers(latLng,MainActivity.this.getString(R.string.taxi),"");
+                            createMarkers(latLng,MainActivity.this.getString(R.string.taxi),"Phone: " + driver_phone);
                             myDialog.dismiss();
                             Toast.makeText(MainActivity.this,MainActivity.this.getResources().getString(R.string.toast_coming_taxi_ok),Toast.LENGTH_LONG).show();
                         }
@@ -747,5 +746,6 @@ public class MainActivity extends AppCompatActivity
                 .setMessage(message)
                 .setPositiveButton(MainActivity.this.getString(R.string.ok), dialogClickListener).show();
     }
+
 
 }

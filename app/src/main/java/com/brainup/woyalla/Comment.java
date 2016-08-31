@@ -99,13 +99,14 @@ public class Comment extends AppCompatActivity {
 
     private void handleSendComment() {
 
-        if (!validateComment()) {
-            return;
-        }
 
         sendCommentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (!validateComment()) {
+                    return;
+                }
                 submitComment();
             }
         });

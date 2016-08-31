@@ -19,8 +19,8 @@
 
 
     <application
-        android:allowBackup="true"
         android:name=".Woyalla"
+        android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -36,7 +36,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyAOZiOZJlT0dVz6guALkMqmWKXmZaN9gc0" />
 
         <activity
             android:name=".MainActivity"

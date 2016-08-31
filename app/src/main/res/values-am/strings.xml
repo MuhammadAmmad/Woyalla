@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ወያላ ሹፌር</string>
-    <string name="about">ስለ እና ብዙ ምናወራው ነገር አለ</string>
+    <string name="about">ወያላ ታክሲ ፈላጊዎችን ከታክሲ ሹፌሮች ጋር በቀላሉ የሚያገናኝ ሲስተም ነው።</string>
     <string name="action_settings">ማስተካከያ</string>
     <string name="btn_login">ግባ</string>
     <string name="call">ታክሲ ለማግኘት ደውል</string>
-    <string name="call_center_number"></string>
+    <string name="call_center_number">8109</string>
     <string name="change_map_type">የካርታ አይነት ቀይር</string>
     <string name="cancel">ዝጋ</string>
     <string name="comment">አስተያየት ላክ</string>
@@ -54,10 +54,11 @@
     <string name="toast_comment_ok">አስተያየቶ በትክክል ተልኳል</string>
     <string name="menu_show_coming_drivers">የሚመጣ ታክሲ አሳይ</string>
     <string name="logging_in">እየገባ ነው ...</string>
-    <string name="navigation_drawer_close" translatable="false"></string>
-    <string name="title_activity_maps"></string>
+    <string name="title_activity_maps">Weyala</string>
     <string name="toast_coming_taxi_ok">መረጃው በትክክል መቷል። እባኮትን ካርታው ላይ ይመልከቱ።</string>
     <string name="toast_coming_taxi_error">የሚመጣ ታክሲ ለጊዜው የሎትም። እባኮትን በቅድሚያ ይደውሉ።</string>
     <string name="dialog_coming_taxi">አድራሻውን በማግኘት ላይ ነን</string>
     <string name="toast_comment_error">ይቅርታ አስተያየቶን መላክ አልተቻለም። እባኮትን እንደገና ይሞክሩ።</string>
+    <string name="fb_link">https://facebook.com/HelloWeyala/</string>
+    <string name="dialog_select_language">Select Language / ቋንቋ ምረጥ</string>
 </resources>

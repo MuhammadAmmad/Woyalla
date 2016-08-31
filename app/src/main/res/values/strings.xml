@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Weyala</string>
     <string name="title_activity_maps">Weyala</string>
-    <string name="call_center_number" translatable="false">994</string>
+    <string name="call_center_number">8109</string>
 
 
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
@@ -12,7 +12,7 @@
     <string name="nav_sub_title">Get Taxi Easily</string>
     <string name="menu_my_location">Update My Location</string>
     <string name="change_map_type">Change Map Type</string>
-    <string name="menu_show_drivers">Show Taxi</string>
+    <string name="menu_show_drivers">Show Nearby Taxis</string>
     <string name="menu_show_coming_drivers">Show Coming Taxi</string>
     <string name="btn_login">Login</string>
     <string name="hint_name">Enter Name</string>
@@ -27,7 +27,7 @@
     <string name="no">No</string>
     <string name="yes">Yes </string>
 
-    <string name="about">Are you the car owner. asethalksjdg asdkgj;las alsdkgj alskdjg ;alsdkjg al;skdjg ;asdg </string>
+    <string name="about">Weyala is a platform that connects clients (taxi users) with taxi drivers easily.</string>
 
     <string name="logout_title">Are you sure you want to Logout?</string>
 
@@ -45,7 +45,7 @@
     <string name="nav_logout">Logout</string>
     <string name="nav_share">Share App</string>
     <string name="nav_rate">Rate App</string>
-    <string name="nav_comment">Comment App</string>
+    <string name="nav_comment">Comment</string>
     <string name="nav_exit">Exit</string>
     <string name="nav_lang">Change Language</string>
     <string name="nav_communicate">Communicate</string>
@@ -75,4 +75,7 @@
 
     <string name="notification_title">New list of near bye Drivers</string>
     <string name="notification_content">Based on your request, we have sent you a list of near bye drivers</string>
+
+    <string name="fb_link">https://facebook.com/HelloWeyala/</string>
+
 </resources>
