@@ -40,8 +40,7 @@ public class Notifications {
         Notification notification = builder.build();
 
         Calendar date = new GregorianCalendar();
-        int id = (int)date.getTime().getTime();
-        mgr.notify(id,notification);
+        mgr.notify(1,notification);
 
     }
 }

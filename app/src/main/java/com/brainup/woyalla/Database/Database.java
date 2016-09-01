@@ -16,10 +16,10 @@ public class Database {
     public static final String Table_NEARBYE_DRIVER = "NEARBYE_DRIVERS";
 
     public static final String[] USER_FIELDS = { "Name","Phone","Latitude","Longitude"};
-    public static final String[] NEARBYE_DRIVERS_FIELDS = { "distanceFromCilent","gpsLatitude","gpsLongitude"};
+    public static final String[] NEARBYE_DRIVERS_FIELDS = { "distanceFromClient","gpsLatitude","gpsLongitude","name"};
 
     public static final String[] USER_COLUMN = { "id", "Name","Phone","Latitude","Longitude"};
-    public static final String[] NEARBYE_DRIVERS_COLUMN = { "id","distanceFromCilent","gpsLatitude","gpsLongitude"};
+    public static final String[] NEARBYE_DRIVERS_COLUMN = { "id","distanceFromClient","gpsLatitude","gpsLongitude","name"};
 
 
 	private SQLiteDatabase myDatabase;
@@ -139,6 +139,7 @@ public class Database {
                     dis.setDistance(Double.parseDouble(c.getString(c.getColumnIndex(NEARBYE_DRIVERS_COLUMN[1]))));
                     dis.setLatitude(Double.parseDouble(c.getString(c.getColumnIndex(NEARBYE_DRIVERS_COLUMN[2]))));
                     dis.setLongitude(Double.parseDouble(c.getString(c.getColumnIndex(NEARBYE_DRIVERS_COLUMN[3]))));
+                    dis.setName(c.getString(c.getColumnIndex(NEARBYE_DRIVERS_COLUMN[4])));
                     drivers.add(dis);
                 }
             }

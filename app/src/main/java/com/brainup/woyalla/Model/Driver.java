@@ -5,7 +5,9 @@ package com.brainup.woyalla.Model;
  */
 public class Driver {
 
+
     double distance, latitude, longitude;
+    String name;
 
     public double getDistance() {
         return distance;
@@ -29,5 +31,13 @@ public class Driver {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

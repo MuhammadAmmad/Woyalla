@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity
         mapFragment.getMapAsync(this);
 
         //call button initialization
-        call = (Button) findViewById(R.id.call);
+        //call = (Button) findViewById(R.id.call);
 
         //initialize the progress dialog
         myDialog = new ProgressDialog(this);
@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity
         intent.setData(Uri.parse("tel:"+phoneNumber));
         sendGPSLocation();
         startActivity(intent);
+
     }
 
     private void sendGPSLocation() {
@@ -173,7 +174,7 @@ public class MainActivity extends AppCompatActivity
                                         "&gpsLatitude="+latitude +
                                         "&gpsLongitude="+longitude);
                         Request request = new Request.Builder()
-                                .url(Woyalla.API_URL + "clients/update/phoneNumber")
+                                .url(Woyalla.API_URL + "clients/update/"+userPhone)
                                 .put(body)
                                 .addHeader("authorization", "Basic dGhlVXNlcm5hbWU6dGhlUGFzc3dvcmQ=")
                                 .addHeader("cache-control", "no-cache")
@@ -182,7 +183,7 @@ public class MainActivity extends AppCompatActivity
 
                         Response response = client.newCall(request).execute();
                         final String responseBody = response.body().string().toString();
-                        Log.i("responseFull", responseBody);
+                        Log.i("responseClient", responseBody);
 
                         JSONObject myObject = (JSONObject) new JSONTokener(responseBody).nextValue();
 
@@ -204,11 +205,16 @@ public class MainActivity extends AppCompatActivity
                             if(isDataExist) {
                                 JSONObject json_response = myObject.getJSONObject("data");
                                 JSONArray json_drivers = json_response.getJSONArray("nearbyDrivers");
+
+                                Log.i("nearbyedriver", json_drivers.toString());
+                                Log.i("nearbyedriverCount", json_drivers.length()+"");
                                 addDriver(json_drivers);
 
-                                //once we get the list of drivers, build and send a notification to the client
-                                Notifications notifications = new Notifications(getApplicationContext());
-                                notifications.buildNotification();
+                                if(json_drivers.length()>0) {
+                                    //once we get the list of drivers, build and send a notification to the client
+                                    Notifications notifications = new Notifications(getApplicationContext());
+                                    notifications.buildNotification();
+                                }
 
                                 MainActivity.this.runOnUiThread(new Runnable() {
                                     @Override
@@ -253,10 +259,14 @@ public class MainActivity extends AppCompatActivity
                 if(json_drivers.length()>0){
                     for(int i=0;i<json_drivers.length();i++){
                         JSONObject obj = json_drivers.getJSONObject(i);
+
                         ContentValues cv = new ContentValues();
-                        cv.put(Database.NEARBYE_DRIVERS_FIELDS[0], obj.getString("distanceFromCilent"));
+                        cv.put(Database.NEARBYE_DRIVERS_FIELDS[0], obj.getString("distanceFromClient"));
                         cv.put(Database.NEARBYE_DRIVERS_FIELDS[1], obj.getString("gpsLatitude"));
                         cv.put(Database.NEARBYE_DRIVERS_FIELDS[2], obj.getString("gpsLongitude"));
+                        cv.put(Database.NEARBYE_DRIVERS_FIELDS[3], obj.getString("name"));
+
+//                        Log.i("drivers",)
 
                         long check = Woyalla.myDatabase.insert(Database.Table_NEARBYE_DRIVER,cv);
                         if(check>0){
@@ -436,7 +446,7 @@ public class MainActivity extends AppCompatActivity
 
         if(mMap != null) {
             if (mMap.getMapType() == GoogleMap.MAP_TYPE_NORMAL) {
-                mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
             } else if (mMap.getMapType() == GoogleMap.MAP_TYPE_SATELLITE) {
                 mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             }
