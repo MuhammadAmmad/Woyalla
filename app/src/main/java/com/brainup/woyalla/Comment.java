@@ -117,6 +117,7 @@ public class Comment extends AppCompatActivity {
         myDialog = new ProgressDialog(this);
         myDialog.setTitle(R.string.app_name);
         myDialog.setMessage(Comment.this.getResources().getString(R.string.comment_sending));
+        myDialog.setCancelable(false);
         myDialog.show();
 
         //start a thread different from the main thread to handle http requests
@@ -194,8 +195,22 @@ public class Comment extends AppCompatActivity {
 
             }
         } catch (JSONException e) {
+            myDialog.dismiss();
+            Comment.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Checkups.showDialog(Comment.this.getString(R.string.toast_comment_error),Comment.this);
+                }
+            });
             e.printStackTrace();
         } catch (IOException e) {
+            myDialog.dismiss();
+            Comment.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Checkups.showDialog(Comment.this.getString(R.string.toast_comment_error),Comment.this);
+                }
+            });
             e.printStackTrace();
         }
 
@@ -226,7 +241,7 @@ public class Comment extends AppCompatActivity {
 
 
     public String getUserPhoneNumber(){
-        return userPhoneNumber;
+        return this.userPhoneNumber;
     }
 
     public int getRating() {
