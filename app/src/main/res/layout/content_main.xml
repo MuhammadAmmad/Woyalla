@@ -12,8 +12,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="40dp"
         >
     <fragment
         android:id="@+id/map"
@@ -23,7 +22,17 @@
         tools:context="com.brainup.woyalla.MainActivity" />
     </LinearLayout>
 
-
+        <Button
+            android:id="@+id/call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:text="@string/call"/>
 
 
 </RelativeLayout>

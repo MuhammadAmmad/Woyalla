@@ -10,7 +10,7 @@
     <string name="cancel">ዝጋ</string>
     <string name="comment">አስተያየት ላክ</string>
     <string name="comment_sending">አስተያየቶ እየተላከ ነው</string>
-    <string name="comment_write">አስተያየቶን እዚህ ፃፍ</string>
+    <string name="comment_write">አስተያየቶን እዚህ ይፃፍ</string>
     <string name="comment_your">አስተያየት</string>
     <string name="err_msg_comment">አስተያየቶን በትክክል ይፃፉ</string>
     <string name="err_msg_name">ሙሉ ስሞትን በትክክል ያስገቡ</string>
@@ -61,4 +61,5 @@
     <string name="toast_comment_error">ይቅርታ አስተያየቶን መላክ አልተቻለም። እባኮትን እንደገና ይሞክሩ።</string>
     <string name="fb_link">https://facebook.com/HelloWeyala/</string>
     <string name="dialog_select_language">Select Language / ቋንቋ ምረጥ</string>
+    <string name="about_developer">በብሬን አፕ ሶፍትዌር ቴክኖሎጂ</string>
 </resources>

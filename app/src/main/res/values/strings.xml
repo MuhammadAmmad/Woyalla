@@ -28,6 +28,7 @@
     <string name="yes">Yes </string>
 
     <string name="about">Weyala is a platform that connects clients (taxi users) with taxi drivers easily.</string>
+    <string name="about_developer">Developed By Brain Up Tech</string>
 
     <string name="logout_title">Are you sure you want to Logout?</string>
 
