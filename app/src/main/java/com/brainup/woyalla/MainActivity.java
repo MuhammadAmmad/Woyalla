@@ -534,7 +534,7 @@ public class MainActivity extends AppCompatActivity
                     JSONObject json_response = myObject.getJSONObject("data");
                     final double gpsLatitude = Double.parseDouble(json_response.get("gpsLatitude").toString());
                     final double gpsLongitude = Double.parseDouble(json_response.get("gpsLongitude").toString());
-                    final double driver_phone = Double.parseDouble(json_response.get("phoneNumber").toString());
+                    final String driver_phone = json_response.get("phoneNumber").toString();
 
 
 
@@ -599,7 +599,7 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this,MainActivity.this.getString(R.string.toast_near_bye_card),Toast.LENGTH_LONG).show();
             for(int i = 0; i <drivers.size(); i++){
                 LatLng latLng = new LatLng(drivers.get(i).getLatitude(),drivers.get(i).getLongitude());
-                createMarkers(latLng,MainActivity.this.getString(R.string.taxi)+ i," : "+ Math.round(drivers.get(i).getDistance()));
+                createMarkers(latLng,MainActivity.this.getString(R.string.taxi)+ i,""+ Math.round(drivers.get(i).getDistance()));
             }
         }
         else{
